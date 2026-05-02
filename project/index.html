@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santosh Rajput — Senior Revenue Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #f7f5f0;
+      --bg2:     #eeebe3;
+      --ink:     #1a1714;
+      --ink2:    #55504a;
+      --ink3:    #9a9088;
+      --accent:  oklch(52% 0.13 42);
+      --accent2: oklch(52% 0.13 220);
+      --serif:   'Playfair Display', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --max:     1120px;
+      --r:       3px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 56px; height: 64px;
+      background: rgba(247,245,240,0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(26,23,20,0.07);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(26,23,20,0.07); }
+    .nav-logo { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.78rem; font-weight: 500; color: var(--ink2); text-decoration: none; letter-spacing: 0.09em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--bg); background: var(--ink); padding: 10px 22px; border-radius: var(--r); text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      max-width: var(--max); margin: 0 auto;
+      padding: 108px 56px 80px; gap: 72px;
+    }
+    .hero-text { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .hero-text.visible { opacity: 1; transform: none; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; display: block; }
+    .hero-name { font-family: var(--serif); font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 700; line-height: 1.06; color: var(--ink); margin-bottom: 8px; }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-title { font-size: 1.05rem; font-weight: 500; color: var(--ink2); margin-bottom: 24px; letter-spacing: 0.01em; }
+    .hero-bio { font-size: 0.97rem; color: var(--ink2); line-height: 1.8; max-width: 520px; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--ink); color: var(--bg); padding: 14px 30px; border-radius: var(--r); font-weight: 600; font-size: 0.88rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+    .btn-secondary { color: var(--ink); font-weight: 500; font-size: 0.88rem; text-decoration: none; padding: 14px 0; border-bottom: 1.5px solid transparent; transition: border-color 0.2s; }
+    .btn-secondary:hover { border-color: var(--ink); }
+
+    .hero-stats { display: flex; gap: 36px; margin-top: 44px; padding-top: 36px; border-top: 1px solid rgba(26,23,20,0.1); }
+    .stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; color: var(--ink); line-height: 1; }
+    .stat-label { font-size: 0.72rem; color: var(--ink3); letter-spacing: 0.07em; text-transform: uppercase; margin-top: 4px; }
+
+    .hero-visual { opacity: 0; transform: translateX(30px); transition: opacity 0.9s ease 0.2s, transform 0.9s ease 0.2s; }
+    .hero-visual.visible { opacity: 1; transform: none; }
+    .photo-frame { width: 100%; aspect-ratio: 3/4; max-width: 360px; background: var(--bg2); border-radius: var(--r); overflow: hidden; position: relative; margin-left: auto; border: 1px solid rgba(26,23,20,0.09); }
+    .photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: repeating-linear-gradient(45deg, var(--bg2) 0px, var(--bg2) 8px, rgba(26,23,20,0.04) 8px, rgba(26,23,20,0.04) 16px); }
+    .photo-placeholder span { font-family: monospace; font-size: 0.68rem; color: var(--ink3); text-align: center; padding: 0 24px; line-height: 1.6; }
+    .photo-badge { position: absolute; bottom: 18px; right: -14px; background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 16px; border-radius: var(--r); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 56px; }
+    .section-inner { max-width: var(--max); margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 3.2vw, 2.7rem); font-weight: 700; line-height: 1.15; color: var(--ink); margin-bottom: 56px; }
+
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg2); }
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item { display: grid; grid-template-columns: 220px 1fr; gap: 48px; padding: 48px 0; border-top: 1px solid rgba(26,23,20,0.1); }
+    .exp-item:last-child { border-bottom: 1px solid rgba(26,23,20,0.1); }
+    .exp-date { font-size: 0.76rem; font-weight: 600; color: var(--ink3); letter-spacing: 0.07em; text-transform: uppercase; line-height: 1.5; }
+    .exp-company { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--accent); margin-top: 8px; }
+    .exp-location { font-size: 0.78rem; color: var(--ink3); margin-top: 2px; }
+    .exp-role { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .exp-pl { font-size: 0.82rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; margin-bottom: 14px; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .exp-bullets li { font-size: 0.92rem; color: var(--ink2); line-height: 1.65; padding-left: 18px; position: relative; }
+    .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; top: 2px; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink2); background: rgba(26,23,20,0.07); padding: 5px 12px; border-radius: 100px; }
+
+    /* ── IMPACT NUMBERS ── */
+    #impact { background: var(--ink); }
+    #impact .section-label { color: rgba(247,245,240,0.4); }
+    #impact .section-title { color: var(--bg); margin-bottom: 0; }
+    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 56px; }
+    .impact-card { background: rgba(247,245,240,0.04); padding: 40px 32px; border-radius: var(--r); text-align: center; }
+    .impact-num { font-family: var(--serif); font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 10px; }
+    .impact-desc { font-size: 0.85rem; color: rgba(247,245,240,0.55); line-height: 1.6; }
+
+    /* ── EXPERTISE ── */
+    #expertise {}
+    .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .expertise-card { padding: 32px; background: var(--bg2); border: 1px solid rgba(26,23,20,0.08); border-radius: var(--r); transition: transform 0.22s, box-shadow 0.22s; }
+    .expertise-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(26,23,20,0.09); }
+    .expertise-icon { width: 40px; height: 40px; margin-bottom: 20px; }
+    .expertise-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .expertise-desc { font-size: 0.88rem; color: var(--ink2); line-height: 1.7; }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg2); }
+    .skills-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+    .skill-group-name { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid rgba(26,23,20,0.1); }
+    .skill-item { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; }
+    .skill-row { display: flex; justify-content: space-between; }
+    .skill-name { font-size: 0.88rem; color: var(--ink2); }
+    .skill-pct { font-size: 0.74rem; font-weight: 600; color: var(--accent); }
+    .skill-bar { height: 2px; background: rgba(26,23,20,0.1); border-radius: 2px; overflow: hidden; }
+    .skill-fill { height: 100%; background: var(--accent); border-radius: 2px; width: 0; transition: width 1.3s cubic-bezier(0.25, 1, 0.5, 1); }
+
+    /* ── EDUCATION ── */
+    #education {}
+    .edu-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .edu-card { padding: 32px; background: var(--bg2); border: 1px solid rgba(26,23,20,0.08); border-radius: var(--r); }
+    .edu-degree { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; line-height: 1.35; }
+    .edu-school { font-size: 0.88rem; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .edu-year { font-size: 0.75rem; color: var(--ink3); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--ink); text-align: center; }
+    #contact .section-inner { max-width: 680px; }
+    #contact .section-label { color: rgba(247,245,240,0.35); }
+    .contact-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.1; color: var(--bg); margin-bottom: 20px; }
+    .contact-title em { font-style: italic; color: var(--accent); }
+    .contact-sub { font-size: 0.97rem; color: rgba(247,245,240,0.55); margin-bottom: 48px; line-height: 1.75; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .contact-link { display: flex; align-items: center; gap: 10px; padding: 14px 26px; border: 1.5px solid rgba(247,245,240,0.18); border-radius: var(--r); color: rgba(247,245,240,0.75); text-decoration: none; font-weight: 500; font-size: 0.88rem; transition: all 0.2s; }
+    .contact-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
+    .contact-link svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer { padding: 28px 56px; background: var(--ink); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(247,245,240,0.07); }
+    .footer-name { font-family: var(--serif); color: rgba(247,245,240,0.4); font-size: 0.88rem; }
+    .footer-copy { font-size: 0.75rem; color: rgba(247,245,240,0.25); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      #hero { grid-template-columns: 1fr; padding: 100px 28px 60px; gap: 48px; }
+      .hero-visual { order: -1; }
+      .photo-frame { max-width: 240px; margin: 0 auto; }
+      .photo-badge { right: 0; }
+      section { padding: 72px 28px; }
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .exp-item { grid-template-columns: 1fr; gap: 14px; }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .expertise-grid { grid-template-columns: 1fr 1fr; }
+      .skills-cols { grid-template-columns: 1fr; gap: 36px; }
+      .edu-list { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .edu-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">Santosh Rajput</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:rajputsantosh@gmail.com" class="nav-cta">Get In Touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <span class="hero-eyebrow">Senior Revenue Leader · Open to Opportunities</span>
+    <h1 class="hero-name">Santosh<br /><em>Rajput</em></h1>
+    <p class="hero-title">SVP &amp; Business Head — IT Services &amp; Consulting</p>
+    <p class="hero-bio">
+      24+ years building and scaling high-value IT services portfolios across the US, UK, APAC, and India. 
+      Trusted by Fortune 500 C-suites to transform challenger positions into strategic partnerships — 
+      leading multi-year engagements exceeding $100M across BFSI, Healthcare, Hi-Tech, Retail, Telecom, and Manufacturing.
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:rajputsantosh@gmail.com" class="btn-primary">Contact Me</a>
+      <a href="#experience" class="btn-secondary">View My Journey →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">24+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">$100M+</div>
+        <div class="stat-label">Engagements Led</div>
+      </div>
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Global Markets</div>
+      </div>
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Industries</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="photo-frame">
+      <div class="photo-placeholder">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="15" r="9" stroke="#9a9088" stroke-width="1.5"/>
+          <path d="M4 40c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="#9a9088" stroke-width="1.5"/>
+        </svg>
+        <span>drop your professional headshot here</span>
+      </div>
+      <div class="photo-badge">Available Now</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label fade-up">Career Timeline</div>
+    <h2 class="section-title fade-up">A track record of<br /><em style="font-style:italic">sustained growth</em></h2>
+    <div class="exp-list">
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Sep 2024 – Oct 2025</div>
+          <div class="exp-company">USEReady Inc.</div>
+          <div class="exp-location">New York, USA</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">SVP, Head of Banking, Financial Services &amp; Healthcare</div>
+          <div class="exp-pl">P&amp;L: $15M</div>
+          <ul class="exp-bullets">
+            <li>Drove 2× QoQ portfolio growth through a dual strategy: product-led entry (Pixel Perfect) and data/BI services expansion.</li>
+            <li>Scaled Pixel Perfect adoption from 1 → 8 units at Citibank; anchored delivery of a 100K-user BI modernization program and secured a $7.5M / 3-year Modernization Factory contract.</li>
+            <li>Built a $30M pipeline by engaging 50+ application teams across Citi.</li>
+            <li>Delivered Hadoop → Snowflake migration for Treasury at BNY Mellon, unlocking cost and performance benefits.</li>
+            <li>Opened Regeneron as a new account; grew revenue from $0 → $2.5M with a $10M pipeline.</li>
+            <li>Opened BlackRock as a new account with product + services synergy.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">BFSI</span><span class="tag">BI Modernization</span><span class="tag">Snowflake</span><span class="tag">Account Growth</span><span class="tag">Pipeline Building</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Sep 2023 – Sep 2024</div>
+          <div class="exp-company">ITC Infotech</div>
+          <div class="exp-location">New Jersey, USA</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Head of Banking &amp; Financial Services</div>
+          <div class="exp-pl">P&amp;L: $40M</div>
+          <ul class="exp-bullets">
+            <li>~80% growth in strategic accounts including BlackRock, Goldman Sachs, Santander, and Castleton Commodities; elevated positioning to "strategic partner."</li>
+            <li>Transformed engagement model to "Squad Model," moving away from typical staff augmentation.</li>
+            <li>Successfully implemented account-wide Co-Pilot + GitHub, delivering ~30% engineering efficiencies.</li>
+            <li>Recognized for helping BlackRock launch the MPL product on time and within budget (2024).</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">Goldman Sachs</span><span class="tag">BlackRock</span><span class="tag">Co-Pilot / GitHub</span><span class="tag">Squad Model</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Oct 2021 – Sep 2023</div>
+          <div class="exp-company">Cygnet Infotech</div>
+          <div class="exp-location">New Jersey, USA</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">President – US Operations</div>
+          <div class="exp-pl">P&amp;L: $30M</div>
+          <ul class="exp-bullets">
+            <li>Won two large ODC deals, doubling the size of the business ($30M TCV).</li>
+            <li>Achieved 100% growth in existing account portfolio.</li>
+            <li>Signed a 360° partnership with an ISV for product engineering and introduced their security product to India as an MSSP.</li>
+            <li>Successfully raised capital at nearly double the valuation within 9 months.</li>
+            <li>Reorganized the business into Products and Services across territories; acquired an OCR company to strengthen Banking offerings.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">P&amp;L Leadership</span><span class="tag">M&amp;A</span><span class="tag">Capital Raise</span><span class="tag">ODC</span><span class="tag">ISV Partnerships</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Dec 2018 – Mar 2020</div>
+          <div class="exp-company">Marlabs</div>
+          <div class="exp-location">New Jersey, USA</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Senior Vice President – New Sales &amp; Strategic Accounts</div>
+          <div class="exp-pl">P&amp;L: $40M</div>
+          <ul class="exp-bullets">
+            <li>Built a new Digital Services portfolio of $40M ($80M TCV) from scratch.</li>
+            <li>Led AI-driven supply chain use cases for an industrial manufacturer — generating $9M savings (3-year $15M TCV).</li>
+            <li>Delivered a 5-year Digital Roadmap for a $10BN global client; generated additional 5% revenue growth.</li>
+            <li>Led Build-Operate-Transfer (BOT) model for a leading Pharma giant, delivering $15M in savings.</li>
+            <li>Built strategic partnerships with Salesforce, MuleSoft, Infor, PTC, AWS, and Google.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">Digital Transformation</span><span class="tag">AI/ML</span><span class="tag">BOT Model</span><span class="tag">Salesforce</span><span class="tag">AWS</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Dec 2017 – Dec 2018</div>
+          <div class="exp-company">Capgemini (Liquidhub)</div>
+          <div class="exp-location">New Jersey, USA</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Managing Director – Strategic Accounts Portfolio</div>
+          <div class="exp-pl">P&amp;L: $60M</div>
+          <ul class="exp-bullets">
+            <li>Contributed to the successful sale/exit of Liquidhub to Capgemini at ~3× revenue.</li>
+            <li>Led CX and data intelligence services, building a portfolio of $60M.</li>
+            <li>Delivered automation for Microsoft's partner management program — $30M in savings (annual business of $20M).</li>
+            <li>Led restructuring and top-team alignment impacting a $1B Sogeti business.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">CX Strategy</span><span class="tag">Data Intelligence</span><span class="tag">Microsoft</span><span class="tag">M&amp;A Integration</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Jan 2016 – Mar 2017</div>
+          <div class="exp-company">Tech Mahindra</div>
+          <div class="exp-location">New Jersey, USA</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Vice President – BU Head (Telco, Hi-Tech &amp; CME)</div>
+          <div class="exp-pl">P&amp;L: $180M</div>
+          <ul class="exp-bullets">
+            <li>Grew business from $130M → $180M through a "Defend and Grow" strategy across Verizon and key Hi-Tech accounts.</li>
+            <li>Won a large managed services deal with EMC ($120M for 3 years).</li>
+            <li>Portfolio included Sony, Walt Disney, Bloomberg, and S&amp;P.</li>
+            <li>Built 360° relationships with ISVs — PTC, EMC, VMware, RedHat.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">Telecom</span><span class="tag">Hi-Tech</span><span class="tag">Verizon</span><span class="tag">Managed Services</span><span class="tag">$180M P&amp;L</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Jul 2013 – Jan 2016</div>
+          <div class="exp-company">NESS Technologies</div>
+          <div class="exp-location">Chicago / Toronto</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Vice President – Business Development &amp; Client Partner</div>
+          <div class="exp-pl">P&amp;L: $70M</div>
+          <ul class="exp-bullets">
+            <li>Grew key global accounts from $17M → $70M.</li>
+            <li>Conceptualized Digital Supply Chain for a big-box retailer — reduced delivery delays by 26%, inventory by 7%, generating $39M in savings and improving EBITDA by 5%.</li>
+            <li>Created a 5-year digital transformation roadmap for Canada's leading retailer, including data/analytics COE, e-commerce strategy, and loyalty program.</li>
+            <li>Increased sales 3× by introducing digital, automation, DevOps, cloud, and big data services.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">Retail &amp; CPG</span><span class="tag">Digital Supply Chain</span><span class="tag">Cloud</span><span class="tag">Big Data</span><span class="tag">Canada</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Mar 2012 – Jul 2013</div>
+          <div class="exp-company">Xchanging</div>
+          <div class="exp-location">Kuala Lumpur, Malaysia</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Director of Sales &amp; Marketing — SaaS &amp; IT Services</div>
+          <div class="exp-pl">Responsibility: $60M (TCV $200M+)</div>
+          <ul class="exp-bullets">
+            <li>Led sales, solutions, and marketing for the Xchanging–YTL Group JV across Southeast Asia.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">SaaS</span><span class="tag">APAC</span><span class="tag">JV Leadership</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">May 2005 – Mar 2012</div>
+          <div class="exp-company">UST Global</div>
+          <div class="exp-location">UK · India · Malaysia</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Director – Business Unit Head &amp; Business Development</div>
+          <div class="exp-pl">Grew portfolios from $0 → $40M (UK), $0 → $50M (India), $0 → $20M (Malaysia)</div>
+          <ul class="exp-bullets">
+            <li>7 years of progressive leadership roles across three continents, building greenfield markets and accounts from zero.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">UK</span><span class="tag">India</span><span class="tag">Malaysia</span><span class="tag">Greenfield Growth</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT NUMBERS -->
+<section id="impact">
+  <div class="section-inner">
+    <div class="section-label fade-up">By the Numbers</div>
+    <h2 class="section-title fade-up" style="color:var(--bg)">Measurable impact,<br /><em style="font-style:italic; color:var(--accent)">at every level</em></h2>
+    <div class="impact-grid">
+      <div class="impact-card fade-up">
+        <div class="impact-num">$180M</div>
+        <div class="impact-desc">Largest P&amp;L managed (Tech Mahindra, Telco &amp; Hi-Tech)</div>
+      </div>
+      <div class="impact-card fade-up">
+        <div class="impact-num">3×</div>
+        <div class="impact-desc">Revenue growth at multiple accounts, including Ness Technologies ($17M → $70M)</div>
+      </div>
+      <div class="impact-card fade-up">
+        <div class="impact-num">$39M</div>
+        <div class="impact-desc">Savings generated via Digital Supply Chain for a big-box retailer</div>
+      </div>
+      <div class="impact-card fade-up">
+        <div class="impact-num">$120M</div>
+        <div class="impact-desc">Managed services deal won with EMC (3-year TCV)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-inner">
+    <div class="section-label fade-up">Core Strengths</div>
+    <h2 class="section-title fade-up">What I do<br /><em style="font-style:italic">exceptionally well</em></h2>
+    <div class="expertise-grid">
+
+      <div class="expertise-card fade-up">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="12" width="32" height="22" rx="2" stroke="var(--accent)" stroke-width="1.5"/>
+          <path d="M13 12V8a7 7 0 0 1 14 0v4" stroke="var(--accent)" stroke-width="1.5"/>
+          <circle cx="20" cy="23" r="3" stroke="var(--accent)" stroke-width="1.5"/>
+        </svg>
+        <div class="expertise-name">Revenue Leadership &amp; P&amp;L Ownership</div>
+        <p class="expertise-desc">From $15M to $180M P&amp;Ls — I own the full accountability cycle: strategy, execution, team, and results. Consistent track record of growing and defending revenue.</p>
+      </div>
+
+      <div class="expertise-card fade-up">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="20" r="6" stroke="var(--accent)" stroke-width="1.5"/>
+          <circle cx="28" cy="20" r="6" stroke="var(--accent)" stroke-width="1.5"/>
+          <path d="M18 20h4" stroke="var(--accent)" stroke-width="1.5"/>
+        </svg>
+        <div class="expertise-name">C-Suite Relationship Building</div>
+        <p class="expertise-desc">Deep experience engaging with CXOs at Fortune 500 companies — turning transactional vendor relationships into multi-year strategic partnerships at firms like Citibank, BlackRock, Goldman Sachs, and Verizon.</p>
+      </div>
+
+      <div class="expertise-card fade-up">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="6,30 14,18 22,24 30,10 36,14" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+          <circle cx="30" cy="10" r="2.5" fill="var(--accent)"/>
+        </svg>
+        <div class="expertise-name">Digital Transformation</div>
+        <p class="expertise-desc">Proven ability to design and execute multi-year digital roadmaps — cloud migrations, data/BI modernization, AI/ML use cases, and supply chain digitalization across complex global enterprises.</p>
+      </div>
+
+      <div class="expertise-card fade-up">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="8" width="13" height="13" rx="2" stroke="var(--accent)" stroke-width="1.5"/>
+          <rect x="22" y="8" width="13" height="13" rx="2" stroke="var(--accent)" stroke-width="1.5"/>
+          <rect x="5" y="25" width="13" height="13" rx="2" stroke="var(--accent)" stroke-width="1.5"/>
+          <rect x="22" y="25" width="13" height="13" rx="2" stroke="var(--accent)" stroke-width="1.5"/>
+        </svg>
+        <div class="expertise-name">Alliance &amp; Partner Ecosystems</div>
+        <p class="expertise-desc">Built and leveraged strategic alliances with Salesforce, MuleSoft, AWS, Google, PTC, VMware, RedHat, and others to create differentiated go-to-market propositions.</p>
+      </div>
+
+      <div class="expertise-card fade-up">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="14" stroke="var(--accent)" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="6" stroke="var(--accent)" stroke-width="1.5"/>
+          <line x1="20" y1="6" x2="20" y2="14" stroke="var(--accent)" stroke-width="1.5"/>
+          <line x1="20" y1="26" x2="20" y2="34" stroke="var(--accent)" stroke-width="1.5"/>
+          <line x1="6" y1="20" x2="14" y2="20" stroke="var(--accent)" stroke-width="1.5"/>
+          <line x1="26" y1="20" x2="34" y2="20" stroke="var(--accent)" stroke-width="1.5"/>
+        </svg>
+        <div class="expertise-name">Global Team Leadership</div>
+        <p class="expertise-desc">Led and scaled global teams across the US, UK, India, Malaysia, Canada, and APAC. Comfortable managing distributed delivery organizations and building high-performance cultures.</p>
+      </div>
+
+      <div class="expertise-card fade-up">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="28" height="28" rx="2" stroke="var(--accent)" stroke-width="1.5"/>
+          <path d="M6 14h28M14 6v28" stroke="var(--accent)" stroke-width="1.5"/>
+        </svg>
+        <div class="expertise-name">New Market &amp; Account Development</div>
+        <p class="expertise-desc">Repeatedly built greenfield markets — from $0 to $50M+ — by identifying the right entry strategies, building brand recognition, and converting early wins into long-term engagements.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label fade-up">Capabilities</div>
+    <h2 class="section-title fade-up">Skills &amp;<br /><em style="font-style:italic">Industry Depth</em></h2>
+    <div class="skills-cols">
+
+      <div class="fade-up">
+        <div class="skill-group-name">Industry Verticals</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Banking &amp; Financial Services</span><span class="skill-pct">98%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="98"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Healthcare &amp; Life Sciences</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Telecom &amp; Hi-Tech</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Retail / CPG &amp; Manufacturing</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
+      </div>
+
+      <div class="fade-up">
+        <div class="skill-group-name">Technology Domains</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Cloud &amp; Infrastructure</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Data / BI &amp; Analytics</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">AI / ML &amp; Automation</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Modern Engineering / DevOps</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
+      </div>
+
+      <div class="fade-up">
+        <div class="skill-group-name">Leadership &amp; Execution</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Revenue &amp; P&amp;L Management</span><span class="skill-pct">98%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="98"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Strategic Account Planning</span><span class="skill-pct">96%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="96"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Alliance &amp; Partner Management</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Global Team Leadership</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="93"></div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label fade-up">Academic Background</div>
+    <h2 class="section-title fade-up">Education &amp;<br /><em style="font-style:italic">Formation</em></h2>
+    <div class="edu-list">
+      <div class="edu-card fade-up">
+        <div class="edu-degree">Master of Business Administration</div>
+        <div class="edu-school">De Montfort University</div>
+        <div class="edu-year">United Kingdom</div>
+      </div>
+      <div class="edu-card fade-up">
+        <div class="edu-degree">Bachelor of Commerce</div>
+        <div class="edu-school">Punjab University</div>
+        <div class="edu-year">India</div>
+      </div>
+      <div class="edu-card fade-up">
+        <div class="edu-degree">Sri Sathya Sai Higher Secondary School</div>
+        <div class="edu-school">Schooling Foundation</div>
+        <div class="edu-year">India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner fade-up">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="contact-title">Ready to lead your<br /><em>next growth chapter?</em></h2>
+    <p class="contact-sub">I'm actively exploring senior leadership opportunities in IT services, consulting, and digital transformation. Let's have a conversation.</p>
+    <div class="contact-links">
+      <a href="mailto:rajputsantosh@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        rajputsantosh@gmail.com
+      </a>
+      <a href="tel:+16303375622" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.99 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (+1) 630 337 5622
+      </a>
+      <a href="https://www.linkedin.com/in/santosh-rajput" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 10v7M12 13a3 3 0 0 1 6 0v4"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Santosh Rajput</span>
+  <span class="footer-copy">© 2026 — Senior Revenue Leader</span>
+</footer>
+
+<!-- TWEAKS -->
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accentColor": "#8b4513",
+  "showStats": true,
+  "font": "Playfair Display",
+  "availabilityLabel": "Available Now"
+}/*EDITMODE-END*/;
+
+function App() {
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    document.documentElement.style.setProperty('--accent', tweaks.accentColor);
+  }, [tweaks.accentColor]);
+
+  React.useEffect(() => {
+    const stats = document.querySelector('.hero-stats');
+    if (stats) stats.style.display = tweaks.showStats ? '' : 'none';
+  }, [tweaks.showStats]);
+
+  React.useEffect(() => {
+    document.querySelectorAll('.photo-badge').forEach(el => {
+      el.textContent = tweaks.availabilityLabel;
+    });
+  }, [tweaks.availabilityLabel]);
+
+  React.useEffect(() => {
+    const f = tweaks.font + ', Georgia, serif';
+    document.querySelectorAll('.hero-name, .section-title, .exp-role, .contact-title, .expertise-name, .edu-degree, .impact-num').forEach(el => {
+      el.style.fontFamily = f;
+    });
+  }, [tweaks.font]);
+
+  return (
+    <TweaksPanel>
+      <TweakSection title="Appearance">
+        <TweakColor id="accentColor" label="Accent Color" value={tweaks.accentColor} onChange={v => setTweak('accentColor', v)} />
+        <TweakRadio
+          id="font" label="Display Font" value={tweaks.font}
+          options={[
+            { value: 'Playfair Display', label: 'Playfair' },
+            { value: 'Georgia', label: 'Georgia' },
+            { value: 'DM Sans', label: 'DM Sans' },
+          ]}
+          onChange={v => setTweak('font', v)}
+        />
+      </TweakSection>
+      <TweakSection title="Content">
+        <TweakText id="availabilityLabel" label="Availability Badge" value={tweaks.availabilityLabel} onChange={v => setTweak('availabilityLabel', v)} />
+        <TweakToggle id="showStats" label="Show Hero Stats" value={tweaks.showStats} onChange={v => setTweak('showStats', v)} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<App />);
+</script>
+
+<div id="tweaks-root"></div>
+
+<script>
+// Nav scroll shadow
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Intersection observer for fade-ups
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up, .hero-text, .hero-visual').forEach(el => obs.observe(el));
+
+// Hero immediate reveal
+setTimeout(() => {
+  const ht = document.querySelector('.hero-text');
+  const hv = document.querySelector('.hero-visual');
+  if (ht) ht.classList.add('visible');
+  if (hv) hv.classList.add('visible');
+}, 120);
+
+// Skill bars animate on scroll
+const skillObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }
+  });
+}, { threshold: 0.25 });
+const skillSection = document.getElementById('skills');
+if (skillSection) skillObs.observe(skillSection);
+</script>
+
+</body>
+</html>
