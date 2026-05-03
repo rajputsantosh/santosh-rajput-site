@@ -2,7 +2,7 @@
 
 Live: https://rajputsantosh.github.io/santosh-rajput-site/
 
-Chief Revenue Officer · IT Services · BFSI · Digital Transformation. 15+ years of P&L ownership up to ~$180M, building enterprise revenue across the US, UK, APAC and India for firms including Tech Mahindra, Capgemini, Marlabs, ITC Infotech and USEReady.
+Global Sales Leader · IT Services · BFSI · Digital Transformation. 15+ years of P&L ownership up to ~$180M, building enterprise revenue across the US, UK, APAC and India for firms including Tech Mahindra, Capgemini, Marlabs, ITC Infotech and USEReady.
 
 ## Contact
 
