@@ -334,6 +334,29 @@
     .testi-meta-num { font-family: var(--cond); font-weight: 800; font-size: 1.8rem; color: var(--red); line-height: 1; letter-spacing: 0.02em; }
     .testi-meta-label { font-family: var(--mono); font-size: 0.55rem; color: var(--ink3); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 6px; }
     @media (max-width: 720px) { .testi-meta { grid-template-columns: 1fr 1fr; } }
+
+    /* F1 WATERMARKS */
+    .wm { position: absolute; pointer-events: none; color: var(--red); z-index: 0; }
+    .wm svg { width: 100%; height: 100%; display: block; }
+    .wm-steering { top: -60px; right: -100px; width: 600px; height: 600px; opacity: 0.10; }
+    .wm-track { top: 40px; left: 50%; transform: translateX(-50%); width: 96%; max-width: 1280px; height: 600px; opacity: 0.09; }
+    .wm-speedo { top: -40px; right: -100px; width: 760px; height: 500px; opacity: 0.10; }
+    @keyframes wm-spin { to { transform: rotate(360deg); } }
+    .wm-steering svg { animation: wm-spin 80s linear infinite; transform-origin: 50% 50%; }
+    @media (max-width: 720px) {
+      .wm-steering { width: 360px; height: 360px; right: -80px; opacity: 0.08; }
+      .wm-speedo { width: 520px; height: 340px; right: -100px; opacity: 0.08; }
+      .wm-track { height: 380px; }
+    }
+    section { z-index: 1; }
+    .wm { z-index: 0 !important; }
+    .race-item, .section-head, .trajectory-wrap, .speedo-card, .pit-card, .partner-cat, .testi-card, .testi-meta-cell, .client-vertical, .podium-card, .contact-card, .driver-panel, .telemetry-bar, .hero-actions, .hero-bio, .hero-name, .hero-title, .hero-eyebrow, .map-wrap, .map-stats, .fuel-grid > div, .speedo-grid, .pit-grid, .partner-grid, .testi-grid, .clients-grid, .podium-row, .contact-cards { position: relative; z-index: 2; }
+
+    /* INTERACTIVE NUMBERS — hover/view countup */
+    .num { display: inline-block; transition: color 0.2s, text-shadow 0.2s; cursor: default; }
+    .num:hover { color: var(--red2); text-shadow: 0 0 18px rgba(232,0,45,0.55); }
+    .num-glow { animation: num-pulse 1.6s ease-out; }
+    @keyframes num-pulse { 0% { text-shadow: 0 0 0 rgba(232,0,45,0); } 30% { text-shadow: 0 0 22px rgba(232,0,45,0.7); } 100% { text-shadow: 0 0 0 rgba(232,0,45,0); } }
   </style>
 </head>
 <body>
@@ -358,6 +381,32 @@
 </nav>
 
 <section id="hero">
+  <div class="wm wm-steering" aria-hidden="true">
+    <svg viewBox="0 0 220 220" fill="none" stroke="currentColor" stroke-width="2.5">
+      <circle cx="110" cy="110" r="100" stroke-width="3"/>
+      <circle cx="110" cy="110" r="86"/>
+      <path d="M 30 70 L 190 70" stroke-width="3.5"/>
+      <rect x="60" y="80" width="100" height="62" rx="8"/>
+      <rect x="72" y="92" width="76" height="22" rx="2" stroke-width="1.4"/>
+      <line x1="74" y1="100" x2="146" y2="100" stroke-width="1.2"/>
+      <line x1="74" y1="106" x2="146" y2="106" stroke-width="1.2"/>
+      <circle cx="76" cy="128" r="4"/><circle cx="92" cy="128" r="4"/>
+      <circle cx="110" cy="128" r="5"/><circle cx="128" cy="128" r="4"/><circle cx="144" cy="128" r="4"/>
+      <circle cx="40" cy="110" r="14"/><circle cx="180" cy="110" r="14"/>
+      <line x1="34" y1="110" x2="46" y2="110" stroke-width="1.4"/><line x1="40" y1="104" x2="40" y2="116" stroke-width="1.4"/>
+      <line x1="174" y1="110" x2="186" y2="110" stroke-width="1.4"/><line x1="180" y1="104" x2="180" y2="116" stroke-width="1.4"/>
+      <rect x="46" y="58" width="6" height="4" fill="currentColor"/><rect x="56" y="58" width="6" height="4" fill="currentColor"/>
+      <rect x="66" y="58" width="6" height="4" fill="currentColor"/><rect x="76" y="58" width="6" height="4" fill="currentColor"/>
+      <rect x="86" y="58" width="6" height="4" fill="currentColor"/><rect x="96" y="58" width="6" height="4" fill="currentColor"/>
+      <rect x="106" y="58" width="6" height="4" fill="currentColor"/><rect x="116" y="58" width="6" height="4" fill="currentColor"/>
+      <rect x="126" y="58" width="6" height="4" fill="currentColor"/><rect x="136" y="58" width="6" height="4" fill="currentColor"/>
+      <rect x="146" y="58" width="6" height="4" fill="currentColor"/><rect x="156" y="58" width="6" height="4" fill="currentColor"/>
+      <rect x="166" y="58" width="6" height="4" fill="currentColor"/>
+      <path d="M 60 158 L 160 158" stroke-width="2"/>
+      <path d="M 86 152 L 134 152 L 130 168 L 90 168 Z" stroke-width="1.5"/>
+      <text x="110" y="184" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" stroke="none" letter-spacing="2">SR · 24Y</text>
+    </svg>
+  </div>
   <div>
     <div class="hero-eyebrow"><span>DRIVER STATUS: ACTIVE</span><span class="blink">█</span></div>
     <h1 class="hero-name">Santosh<span class="surname">Rajput</span></h1>
@@ -409,6 +458,23 @@
     </div>
 
     <div class="circuit-timeline">
+      <div class="wm wm-track" aria-hidden="true">
+        <svg viewBox="0 0 800 360" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMid meet">
+          <path d="M 60 200 Q 60 70, 200 70 L 360 70 Q 460 70, 460 130 Q 460 170, 530 170 L 640 170 Q 740 170, 740 240 Q 740 310, 660 310 L 270 310 Q 60 310, 60 220 Z"/>
+          <path d="M 60 200 Q 60 70, 200 70 L 360 70 Q 460 70, 460 130 Q 460 170, 530 170 L 640 170 Q 740 170, 740 240 Q 740 310, 660 310 L 270 310 Q 60 310, 60 220 Z" stroke-width="2" stroke-dasharray="6 8" opacity="0.7"/>
+          <g stroke-width="2.5">
+            <line x1="50" y1="190" x2="50" y2="210"/><line x1="60" y1="190" x2="60" y2="210"/><line x1="70" y1="190" x2="70" y2="210"/>
+          </g>
+          <g fill="currentColor" stroke="none" font-family="monospace" font-size="11" letter-spacing="1.5">
+            <text x="78" y="58">T1</text>
+            <text x="370" y="58">T2</text>
+            <text x="470" y="158">T3</text>
+            <text x="650" y="158">T4</text>
+            <text x="752" y="252">T5</text>
+            <text x="200" y="332">FINISH</text>
+          </g>
+        </svg>
+      </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 10 · 2024–2025</div><div class="race-co">USEReady Inc.</div><div class="race-loc">New York, USA</div></div>
@@ -628,6 +694,39 @@
 </section>
 
 <section id="impact">
+  <div class="wm wm-speedo" aria-hidden="true">
+    <svg viewBox="0 0 600 400" fill="none" stroke="currentColor">
+      <path d="M 80 320 A 220 220 0 0 1 520 320" stroke-width="14" stroke-linecap="round"/>
+      <path d="M 110 320 A 190 190 0 0 1 490 320" stroke-width="2" stroke-dasharray="3 6"/>
+      <path d="M 140 320 A 160 160 0 0 1 460 320" stroke-width="1.5" opacity="0.5"/>
+      <g stroke-width="3" stroke-linecap="round">
+        <line x1="80" y1="320" x2="92" y2="320"/>
+        <line x1="100" y1="232" x2="113" y2="237"/>
+        <line x1="155" y1="158" x2="166" y2="166"/>
+        <line x1="232" y1="112" x2="237" y2="124"/>
+        <line x1="300" y1="100" x2="300" y2="113"/>
+        <line x1="368" y1="112" x2="363" y2="124"/>
+        <line x1="445" y1="158" x2="434" y2="166"/>
+        <line x1="500" y1="232" x2="487" y2="237"/>
+        <line x1="520" y1="320" x2="508" y2="320"/>
+      </g>
+      <g fill="currentColor" stroke="none" font-family="monospace" font-size="14" letter-spacing="2">
+        <text x="74" y="345" text-anchor="middle">0</text>
+        <text x="93" y="218">40</text>
+        <text x="148" y="142">80</text>
+        <text x="226" y="100">120</text>
+        <text x="288" y="86">140</text>
+        <text x="358" y="100">160</text>
+        <text x="438" y="142" fill="currentColor">180</text>
+        <text x="500" y="218" fill="currentColor">RED</text>
+        <text x="525" y="345" text-anchor="middle">∞</text>
+      </g>
+      <line x1="300" y1="320" x2="438" y2="142" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="300" cy="320" r="22" stroke-width="3" fill="currentColor" opacity="0.9"/>
+      <circle cx="300" cy="320" r="10" fill="currentColor"/>
+      <text x="300" y="380" text-anchor="middle" font-family="monospace" font-size="12" fill="currentColor" stroke="none" letter-spacing="3">P&amp;L · M $ / YR</text>
+    </svg>
+  </div>
   <div class="section-inner">
     <div class="section-head fade-up"><div class="section-label">// TELEMETRY</div><h2 class="section-title">Performance <em>Metrics</em></h2></div>
     <div class="speedo-grid">
@@ -809,6 +908,43 @@ function fillOnEnter(selector, fillSelector) {
 }
 fillOnEnter('.trajectory-wrap', '.tr-bar-fill');
 fillOnEnter('.pit-card', '.pit-meter-fill');
+
+// Universal number count-up: runs on first scroll-into-view, replays on hover
+function countUpEl(el, dur) {
+  dur = dur || 1100;
+  const final = el.dataset.final != null ? el.dataset.final : el.textContent.trim();
+  if (el.dataset.final == null) el.dataset.final = final;
+  const m = final.match(/^([^\d]*)(\d+(?:\.\d+)?)(.*)$/);
+  if (!m) return;
+  const prefix = m[1], target = parseFloat(m[2]), suffix = m[3];
+  const isFloat = m[2].indexOf('.') !== -1;
+  const start = performance.now();
+  function step(ts) {
+    const p = Math.min((ts - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const cur = ease * target;
+    el.textContent = prefix + (isFloat ? cur.toFixed(1) : Math.round(cur)) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = final;
+  }
+  requestAnimationFrame(step);
+}
+const numSelectors = '.tr-val, .pit-meter-val, .cv-count-num, .testi-meta-num, .pcat-count strong, .ms-sum-num';
+document.querySelectorAll(numSelectors).forEach(el => {
+  el.dataset.final = el.textContent.trim();
+  el.classList.add('num');
+  let played = false;
+  const obs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && !played) { played = true; countUpEl(el); obs.disconnect(); }
+  }), { threshold: 0.4 });
+  obs.observe(el);
+  el.addEventListener('mouseenter', () => {
+    countUpEl(el, 600);
+    el.classList.remove('num-glow');
+    void el.offsetWidth;
+    el.classList.add('num-glow');
+  });
+});
 
 // Interactive numbers
 function countUp(el, target, prefix, duration) {
