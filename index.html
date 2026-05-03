@@ -349,6 +349,22 @@
     .testi-meta-label { font-family: var(--mono); font-size: 0.55rem; color: var(--ink3); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 6px; }
     @media (max-width: 720px) { .testi-meta { grid-template-columns: 1fr 1fr; } }
 
+    /* RACE WINS */
+    #wins { background: var(--bg2); }
+    .section-sub { font-size: 0.95rem; color: var(--ink2); line-height: 1.7; max-width: 760px; margin-top: 18px; }
+    .wins-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .win-card { background: var(--bg); padding: 26px 22px 22px; transition: background 0.3s; display: flex; flex-direction: column; gap: 9px; min-height: 290px; }
+    .win-card:hover { background: var(--bg3); }
+    .win-tag { font-family: var(--mono); font-size: 0.55rem; color: var(--red); letter-spacing: 0.16em; text-transform: uppercase; }
+    .win-client { font-family: var(--cond); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.15; color: var(--ink); }
+    .win-era { font-family: var(--mono); font-size: 0.6rem; color: var(--ink3); letter-spacing: 0.08em; }
+    .win-desc { font-size: 0.8rem; color: var(--ink2); line-height: 1.7; flex-grow: 1; }
+    .win-foot { display: flex; gap: 6px; padding-top: 12px; border-top: 1px solid var(--line); flex-wrap: wrap; margin-top: auto; }
+    .win-type, .win-scale { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border: 1px solid var(--line2); color: var(--ink2); }
+    .win-type { color: var(--red); border-color: rgba(232,0,45,0.35); background: rgba(232,0,45,0.06); }
+    @media (max-width: 960px) { .wins-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .wins-grid { grid-template-columns: 1fr; } }
+
     /* F1 WATERMARKS */
     .wm { position: absolute; pointer-events: none; color: var(--red); z-index: 0; }
     .wm svg { width: 100%; height: 100%; display: block; }
@@ -385,6 +401,7 @@
     <li><a href="#globalreach">Global</a></li>
     <li><a href="#clients">Clients</a></li>
     <li><a href="#impact">Impact</a></li>
+    <li><a href="#wins">Wins</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#partnerships">Alliances</a></li>
     <li><a href="#testimonials">Voices</a></li>
@@ -748,6 +765,115 @@
       <div class="speedo-card fade-up" data-modal="speedo2"><div class="speedo-wrap"><canvas id="speedo2" width="160" height="96"></canvas><div class="speedo-val" id="sv2">0×</div></div><div class="speedo-title">Growth Multiplier</div><div class="speedo-desc">Ness account scale-up</div><div class="speedo-cta">// CLICK FOR DETAILS</div></div>
       <div class="speedo-card fade-up" data-modal="speedo3"><div class="speedo-wrap"><canvas id="speedo3" width="160" height="96"></canvas><div class="speedo-val" id="sv3">$0M</div></div><div class="speedo-title">Client Savings Delivered</div><div class="speedo-desc">Aggregate · 4 programs</div><div class="speedo-cta">// CLICK FOR DETAILS</div></div>
       <div class="speedo-card fade-up" data-modal="speedo4"><div class="speedo-wrap"><canvas id="speedo4" width="160" height="96"></canvas><div class="speedo-val" id="sv4">$0M</div></div><div class="speedo-title">Largest Single Deal</div><div class="speedo-desc">EMC managed services</div><div class="speedo-cta">// CLICK FOR DETAILS</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="wins">
+  <div class="section-inner">
+    <div class="section-head fade-up">
+      <div class="section-label">// TROPHY CABINET</div>
+      <h2 class="section-title">Race <em>Wins</em></h2>
+      <p class="section-sub">A selection of large managed services contracts and turnkey transformation programs across BFSI, telecom, retail, hi-tech and public sector — the deals behind the P&amp;L numbers.</p>
+    </div>
+    <div class="wins-grid">
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// HI-TECH · AMS TAKEOVER</div>
+        <div class="win-client">EMC</div>
+        <div class="win-era">Tech Mahindra · 2016–17</div>
+        <p class="win-desc">Won and ran a multi-year application maintenance and support portfolio, displacing a top-5 incumbent provider. Scope spanned enterprise platforms and Adobe-related components.</p>
+        <div class="win-foot"><span class="win-type">AMS Takeover</span><span class="win-scale">3-Year Run</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// TELECOM + PUBLIC SECTOR · GREENFIELD JV</div>
+        <div class="win-client">YTL / YES + 1BestariNet</div>
+        <div class="win-era">Xchanging · Malaysia · 2012–13</div>
+        <p class="win-desc">JV-led greenfield national 4G network paired with the 1BestariNet education platform connecting thousands of Malaysian schools. Cost-to-profit commercial model — investment recovery planned at 18 months, profitability achieved within 6.</p>
+        <div class="win-foot"><span class="win-type">Greenfield JV</span><span class="win-scale">Cost-to-Profit</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// LOGISTICS · MODERNIZATION + ODC</div>
+        <div class="win-client">DHL</div>
+        <div class="win-era">UST Global · Malaysia + Chennai · 2007–09</div>
+        <p class="win-desc">AS/400 → .NET modernization of mission-critical billing platform, paired with the first dedicated DHL offshore delivery center in Chennai (inaugurated by NASSCOM president). Scalable long-term delivery model.</p>
+        <div class="win-foot"><span class="win-type">Legacy Modernization</span><span class="win-scale">First ODC</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// BFSI · MULTI-TOWER</div>
+        <div class="win-client">Schroders</div>
+        <div class="win-era">UST Global · UK + India · 2009–12</div>
+        <p class="win-desc">Multi-tower BFSI engagement combining offshore delivery center, 24×7 infrastructure operations, India-based NOC, and .NET modernization for a global asset manager. Recovered a challenged transformation program through delivery intervention.</p>
+        <div class="win-foot"><span class="win-type">ODC + NOC</span><span class="win-scale">Multi-Tower</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// EDUCATION · SELF-FUNDED INNOVATION</div>
+        <div class="win-client">Pearson</div>
+        <div class="win-era">Ness · 2013–16</div>
+        <p class="win-desc">Consolidated 18 applications into a single multi-tenant platform. 24×7 support optimization and offshore operations funded the new platform from existing run-estate savings — innovation paid for from the operations budget itself.</p>
+        <div class="win-foot"><span class="win-type">Platform Consolidation</span><span class="win-scale">18 → 1 Apps</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// RETAIL + FINANCIAL · INSOURCING</div>
+        <div class="win-client">Canadian Tire / CTFS</div>
+        <div class="win-era">Ness · Toronto · 2013–15</div>
+        <p class="win-desc">Insourcing partnership — decomposed work from incumbent provider, improved SLAs, and built internal capability. Data warehouse, MDM, single source of truth, payment gateway, AML/NICE Actimize, and a Data Center of Excellence.</p>
+        <div class="win-foot"><span class="win-type">Insourcing</span><span class="win-scale">Data CoE</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// BFSI · POST-MERGER INTEGRATION</div>
+        <div class="win-client">Bank of America — Countrywide</div>
+        <div class="win-era">UST Global · 2008</div>
+        <p class="win-desc">Post-acquisition technology integration following BoA's purchase of Countrywide — at the time one of the largest US mortgage origination and servicing platforms. Legacy integration, platform stabilization, and operating consolidation.</p>
+        <div class="win-foot"><span class="win-type">Post-Merger</span><span class="win-scale">Mortgage Platform</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// SEMICONDUCTOR · TESTING COE</div>
+        <div class="win-client">Intel</div>
+        <div class="win-era">UST Global · India · 2007–09</div>
+        <p class="win-desc">Largest UST deal at the time. Built a chip testing center of excellence with campus hiring, structured training, and distributed test centers across South India — seeded the firm's broader semiconductor testing business.</p>
+        <div class="win-foot"><span class="win-type">Testing CoE</span><span class="win-scale">Talent Factory</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// BFSI · REGIONAL MIGRATION</div>
+        <div class="win-client">SWIFT — South Asia Banks</div>
+        <div class="win-era">SSI · 2002–04</div>
+        <p class="win-desc">Regional managed migration of financial messaging from legacy X.25 to secure IP-based SWIFTNet. Bank-by-bank cutover planning, training, and post-migration stabilization across India, Sri Lanka, Bangladesh, Nepal, Bhutan and Maldives.</p>
+        <div class="win-foot"><span class="win-type">Regional Migration</span><span class="win-scale">Critical Payments</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// BFSI · CLOUD DATA MODERNIZATION</div>
+        <div class="win-client">Global Asset Servicer</div>
+        <div class="win-era">USEReady · 2024–25 · BNY Mellon</div>
+        <p class="win-desc">Treasury workload migration from Hadoop to Snowflake for one of the world's largest asset servicers. Workload movement, validation, and run-readiness across a regulated cloud data platform.</p>
+        <div class="win-foot"><span class="win-type">Cloud Migration</span><span class="win-scale">Treasury</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// BFSI · BI MODERNIZATION</div>
+        <div class="win-client">Top-5 Global Bank</div>
+        <div class="win-era">USEReady · 2024–25 · Citibank</div>
+        <p class="win-desc">100K-user BI modernization at a top-5 global bank. Built a $30M pipeline across 50+ application teams; secured a $7.5M / 3-year Modernization Factory contract anchored by a sharper analytics value narrative.</p>
+        <div class="win-foot"><span class="win-type">BI Rationalization</span><span class="win-scale">$7.5M / 3 Yrs</span></div>
+      </div>
+
+      <div class="win-card fade-up">
+        <div class="win-tag">// TELECOM · DEFEND &amp; GROW</div>
+        <div class="win-client">Verizon — Enterprise + Consumer</div>
+        <div class="win-era">Tech Mahindra · 2016–17</div>
+        <p class="win-desc">Strategic East Coast telecom account. "Defend and grow" execution lifted business from $130M to $180M across applications, infrastructure and data services — anchored by a $120M / 3-year EMC managed services win in the same era.</p>
+        <div class="win-foot"><span class="win-type">Multi-Tower</span><span class="win-scale">$130M → $180M</span></div>
+      </div>
+
     </div>
   </div>
 </section>
