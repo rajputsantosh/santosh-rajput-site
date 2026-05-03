@@ -176,7 +176,21 @@
     .cv-logos { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); align-items: center; }
     .cv-logo-img { height: 28px; max-width: 84px; object-fit: contain; background: rgba(255,255,255,0.94); padding: 4px 7px; border-radius: 2px; transition: transform 0.2s, background 0.2s; }
     .cv-logo-img:hover { transform: translateY(-2px); background: #fff; }
-    .cv-logo-chip { font-family: var(--mono); font-size: 0.55rem; color: var(--ink2); border: 1px solid var(--line2); padding: 3px 8px; letter-spacing: 0.04em; background: var(--bg3); }
+    .cv-logo-chip {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 28px; padding: 4px 11px; background: rgba(255,255,255,0.94); color: #0a0a0f;
+      border-radius: 2px; font-family: 'Inter', system-ui, sans-serif; font-weight: 800;
+      font-size: 0.72rem; letter-spacing: -0.01em; white-space: nowrap;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .cv-logo-chip:hover { transform: translateY(-2px); background: #fff; }
+    .cv-logo-chip[data-brand="goldman"] { background: #001a3a; color: #fff; font-family: 'Playfair Display', 'Times New Roman', serif; font-weight: 600; letter-spacing: 0; }
+    .cv-logo-chip[data-brand="blackrock"] { background: #000; color: #fff; letter-spacing: -0.02em; }
+    .cv-logo-chip[data-brand="ms"] { color: #002868; }
+    .cv-logo-chip[data-brand="bny"] { color: #002B49; }
+    .cv-logo-chip[data-brand="merck"] { color: #503291; font-style: italic; }
+    .cv-logo-chip[data-brand="regen"] { color: #003C71; }
+    .cv-logo-chip[data-brand="castleton"] { color: #1c1c2e; }
     @media (max-width: 960px) { .clients-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .clients-grid { grid-template-columns: 1fr; } }
 
@@ -650,13 +664,13 @@
           <img class="cv-logo-img" src="logos/image41.png" alt="SWIFT"/>
           <img class="cv-logo-img" src="logos/image44.png" alt="State Bank of India"/>
           <img class="cv-logo-img" src="logos/image42.png" alt="Canadian Tire Financial"/>
-          <span class="cv-logo-chip">Goldman Sachs</span>
-          <span class="cv-logo-chip">Morgan Stanley</span>
-          <span class="cv-logo-chip">BNY Mellon</span>
-          <span class="cv-logo-chip">BlackRock</span>
-          <span class="cv-logo-chip">Regeneron</span>
-          <span class="cv-logo-chip">Merck KGaA</span>
-          <span class="cv-logo-chip">Castleton CI</span>
+          <span class="cv-logo-chip" data-brand="goldman">Goldman Sachs</span>
+          <span class="cv-logo-chip" data-brand="ms">Morgan Stanley</span>
+          <span class="cv-logo-chip" data-brand="bny">BNY MELLON</span>
+          <span class="cv-logo-chip" data-brand="blackrock">BlackRock</span>
+          <span class="cv-logo-chip" data-brand="regen">REGENERON</span>
+          <span class="cv-logo-chip" data-brand="merck">Merck KGaA</span>
+          <span class="cv-logo-chip" data-brand="castleton">Castleton CI</span>
         </div>
       </div>
 
