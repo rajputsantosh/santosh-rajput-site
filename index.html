@@ -96,8 +96,8 @@
     .nav-flag div:nth-child(odd) { background: var(--bg); border: 1px solid var(--ink); }
     .nav-logo { font-family: var(--cond); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
     .nav-logo span { color: var(--red); }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-family: var(--mono); font-size: 0.65rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links { display: flex; gap: 18px; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: 0.6rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; transition: color 0.2s; }
     .nav-links a:hover { color: var(--red); }
     .nav-cta { font-family: var(--cond); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); background: var(--red); padding: 10px 20px; text-decoration: none; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); transition: background 0.2s; }
     .nav-cta:hover { background: var(--red2); }
@@ -391,6 +391,25 @@
     .pcat-count { font-family: var(--mono); font-size: 0.58rem; color: var(--ink3); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
     .pcat-count strong { color: var(--red); font-family: var(--cond); font-size: 0.95rem; letter-spacing: 0.02em; margin-right: 3px; }
 
+    /* INSIGHTS / RECENT WRITING */
+    #insights { background: var(--bg2); }
+    .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .ins-card { background: var(--bg); padding: 30px 28px 26px; display: flex; flex-direction: column; gap: 14px; transition: background 0.3s; text-decoration: none; color: inherit; }
+    .ins-card:hover { background: var(--bg3); }
+    .ins-meta { display: flex; justify-content: space-between; gap: 8px; font-family: var(--mono); font-size: 0.55rem; color: var(--ink3); letter-spacing: 0.14em; text-transform: uppercase; }
+    .ins-meta-tag { color: var(--red); }
+    .ins-title { font-family: var(--cond); font-weight: 800; font-size: 1.4rem; text-transform: uppercase; line-height: 1.15; letter-spacing: 0.02em; color: var(--ink); transition: color 0.2s; }
+    .ins-card:hover .ins-title { color: var(--red); }
+    .ins-teaser { font-size: 0.82rem; color: var(--ink2); line-height: 1.7; flex-grow: 1; }
+    .ins-foot { font-family: var(--mono); font-size: 0.6rem; color: var(--red); letter-spacing: 0.14em; text-transform: uppercase; padding-top: 14px; border-top: 1px solid var(--line); }
+    .ins-foot::after { content: ' →'; transition: transform 0.2s; display: inline-block; }
+    .ins-card:hover .ins-foot::after { transform: translateX(4px); }
+    .insights-foot { display: flex; justify-content: center; margin-top: 32px; }
+    .insights-foot a { font-family: var(--mono); font-size: 0.65rem; color: var(--red); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--red); padding: 12px 20px; transition: background 0.2s, color 0.2s; }
+    .insights-foot a:hover { background: var(--red); color: var(--ink); }
+    @media (max-width: 960px) { .insights-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .insights-grid { grid-template-columns: 1fr; } }
+
     /* POINT OF VIEW */
     #pov { background: var(--bg); }
     .pov-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
@@ -492,17 +511,14 @@
     <a href="#hero" class="nav-logo">Santosh <span>Rajput</span></a>
   </div>
   <ul class="nav-links">
-    <li><a href="#engage">How I Help</a></li>
     <li><a href="#experience">Career</a></li>
-    <li><a href="#globalreach">Global</a></li>
-    <li><a href="#clients">Clients</a></li>
-    <li><a href="#impact">Impact</a></li>
     <li><a href="#wins">Wins</a></li>
+    <li><a href="#impact">Impact</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#partnerships">Alliances</a></li>
-    <li><a href="#testimonials">Voices</a></li>
     <li><a href="#pov">POV</a></li>
-    <li><a href="#education">Education</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="#testimonials">Voices</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="engage-router" tabindex="0">
@@ -1142,8 +1158,45 @@
     </div>
 
     <div class="pov-foot-note fade-up">
-      <span class="pov-foot-note-text">Long-form versions of these points of view publish on LinkedIn — link below.</span>
-      <a href="https://www.linkedin.com/in/santosh-rajput" target="_blank" rel="noopener" class="pov-foot-note-cta">Follow on LinkedIn →</a>
+      <span class="pov-foot-note-text">Long-form versions of these points of view publish on LinkedIn and mirror to the Insights section below.</span>
+      <a href="#insights" class="pov-foot-note-cta">Read latest insights →</a>
+    </div>
+  </div>
+</section>
+
+<section id="insights">
+  <div class="section-inner">
+    <div class="section-head fade-up">
+      <div class="section-label">// PIT NOTES · RECENT WRITING</div>
+      <h2 class="section-title">Insights &amp; <em>Articles</em></h2>
+      <p class="section-sub">Long-form versions of my Point of View — published on LinkedIn, mirrored here. New piece every 10–14 days.</p>
+    </div>
+    <div class="insights-grid">
+
+      <a href="https://www.linkedin.com/in/santosh-rajput/recent-activity/articles/" target="_blank" rel="noopener" class="ins-card fade-up">
+        <div class="ins-meta"><span>// COMING SOON</span><span class="ins-meta-tag">AI · BFSI</span></div>
+        <h3 class="ins-title">Why Mid-Tier IT Services Firms Keep Losing the AI Deal</h3>
+        <p class="ins-teaser">The AI loss isn't a technology gap — it's a commercial gap. A field-tested view from inside Co-Pilot rollouts at BlackRock, Goldman Sachs and Citibank, and what BFSI buyers actually want from their services partner.</p>
+        <div class="ins-foot">Read on LinkedIn</div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/santosh-rajput/recent-activity/articles/" target="_blank" rel="noopener" class="ins-card fade-up">
+        <div class="ins-meta"><span>// COMING SOON</span><span class="ins-meta-tag">GCC · India</span></div>
+        <h3 class="ins-title">GCC 2.0: From Cost Arbitrage to Product Engineering</h3>
+        <p class="ins-teaser">A playbook for global services CEOs and PE operating partners on how to re-architect captive India operations into product P&amp;Ls — drawn from $0→$50M greenfield builds at UST and the DHL Chennai ODC.</p>
+        <div class="ins-foot">Read on LinkedIn</div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/santosh-rajput/recent-activity/articles/" target="_blank" rel="noopener" class="ins-card fade-up">
+        <div class="ins-meta"><span>// COMING SOON</span><span class="ins-meta-tag">YTL · Commercial Design</span></div>
+        <h3 class="ins-title">The Cost-to-Profit Playbook: How YTL Hit 6-Month Payback on an 18-Month JV</h3>
+        <p class="ins-teaser">The single biggest commercial-design lesson of my career: how a national 4G greenfield build was structured to recover JV investment in 18 months but reached profitability in 6 — anchored by the 1BestariNet education win.</p>
+        <div class="ins-foot">Read on LinkedIn</div>
+      </a>
+
+    </div>
+    <div class="insights-foot fade-up">
+      <a href="https://www.linkedin.com/in/santosh-rajput" target="_blank" rel="noopener">Follow on LinkedIn for new pieces</a>
     </div>
   </div>
 </section>
