@@ -2,7 +2,7 @@
 
 Live: https://rajputsantosh.github.io/santosh-rajput-site/
 
-Global Sales Leader · IT Services · BFSI · Digital Transformation. 15+ years of P&L ownership up to ~$180M, building enterprise revenue across the US, UK, APAC and India for firms including Tech Mahindra, Capgemini, Marlabs, ITC Infotech and USEReady.
+Advisor & Operating Partner — IT Services, BFSI & AI Transformation. 25+ years building enterprise revenue across the US, UK, APAC and India for firms including Tech Mahindra, Capgemini, Marlabs, ITC Infotech, USEReady and more. Currently building a stealth-mode venture at the intersection of Data, Cloud, AI and Security.
 
 ## Contact
 
@@ -12,4 +12,4 @@ Global Sales Leader · IT Services · BFSI · Digital Transformation. 15+ years 
 
 ## About this repo
 
-A single-page personal site styled with an F1 / racing-telemetry aesthetic — career circuit, speedometer KPIs, fuel-gauge skill bars, world map of markets served. Pure HTML/CSS/JS, no build step. Open `index.html` in a browser.
+A single-page personal site styled with an F1 / racing-telemetry aesthetic — career circuit, speedometer KPIs, world map of markets served, race wins, point of view. Plus dedicated landing pages for advisor, board and speaking enquiries. Pure HTML/CSS/JS, no build step. Open `index.html` in a browser.
