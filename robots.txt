@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rajputsantosh.github.io/santosh-rajput-site/sitemap.xml
