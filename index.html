@@ -504,6 +504,74 @@
     .num:hover { color: var(--red2); text-shadow: 0 0 18px rgba(232,0,45,0.55); }
     .num-glow { animation: num-pulse 1.6s ease-out; }
     @keyframes num-pulse { 0% { text-shadow: 0 0 0 rgba(232,0,45,0); } 30% { text-shadow: 0 0 22px rgba(232,0,45,0.7); } 100% { text-shadow: 0 0 0 rgba(232,0,45,0); } }
+
+    /* AI STACK / ENGINE ROOM */
+    #ai-stack { background: var(--bg); }
+    .stack-intro { font-size: 0.95rem; color: var(--ink2); line-height: 1.8; max-width: 820px; margin-top: 18px; }
+
+    /* ARM hero block */
+    .arm-hero { background: var(--bg2); border: 1px solid var(--line); padding: 40px 40px 36px; margin-bottom: 48px; position: relative; }
+    .arm-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--red); }
+    .arm-eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--red); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px; }
+    .arm-name { font-family: var(--cond); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.4rem); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; margin-bottom: 8px; }
+    .arm-name span { color: var(--red); font-size: 0.4em; vertical-align: middle; margin-left: 14px; letter-spacing: 0.08em; font-weight: 600; }
+    .arm-tag { font-size: 0.93rem; color: var(--ink2); line-height: 1.75; max-width: 760px; margin-bottom: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+
+    .arm-pillars-head { font-family: var(--mono); font-size: 0.62rem; color: var(--ink3); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px; }
+    .arm-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 36px; }
+    .arm-pillar { background: var(--bg); padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 8px; transition: background 0.25s; }
+    .arm-pillar:hover { background: var(--bg3); }
+    .arm-pillar-num { font-family: var(--mono); font-size: 0.6rem; color: var(--red); letter-spacing: 0.16em; }
+    .arm-pillar-title { font-family: var(--cond); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--ink); }
+    .arm-pillar-body { font-size: 0.8rem; color: var(--ink2); line-height: 1.7; }
+    .arm-pillar-body code { font-family: var(--mono); font-size: 0.78rem; color: var(--red); background: rgba(232,0,45,0.06); padding: 1px 5px; }
+    @media (max-width: 900px) { .arm-pillars { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .arm-pillars { grid-template-columns: 1fr; } .arm-hero { padding: 28px 24px 24px; } }
+
+    .arm-agents-head { font-family: var(--mono); font-size: 0.62rem; color: var(--ink3); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; }
+    .arm-agents { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .arm-agent { background: var(--bg); padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 6px; transition: background 0.2s; }
+    .arm-agent:hover { background: var(--bg3); }
+    .arm-agent-name { font-family: var(--cond); font-weight: 800; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink); }
+    .arm-agent-role { font-size: 0.74rem; color: var(--ink2); line-height: 1.6; flex-grow: 1; }
+    .arm-agent-conf { font-family: var(--mono); font-size: 0.55rem; color: var(--red); letter-spacing: 0.14em; text-transform: uppercase; padding-top: 10px; border-top: 1px solid var(--line); margin-top: 4px; }
+    .arm-agent.platform .arm-agent-conf { color: var(--ink3); }
+    @media (max-width: 900px) { .arm-agents { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .arm-agents { grid-template-columns: 1fr; } }
+
+    /* Other agents (non-ARM) */
+    .agents-side-head { font-family: var(--mono); font-size: 0.7rem; color: var(--red); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px; }
+    .agents-side-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 48px; }
+    .agent-side-card { background: var(--bg2); padding: 28px 24px 24px; display: flex; flex-direction: column; gap: 12px; transition: background 0.25s; }
+    .agent-side-card:hover { background: var(--bg3); }
+    .agent-side-tag { font-family: var(--mono); font-size: 0.55rem; color: var(--red); letter-spacing: 0.14em; text-transform: uppercase; }
+    .agent-side-name { font-family: var(--cond); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; }
+    .agent-side-body { font-size: 0.82rem; color: var(--ink2); line-height: 1.7; flex-grow: 1; }
+    @media (max-width: 1024px) { .agents-side-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .agents-side-grid { grid-template-columns: 1fr; } }
+
+    /* Day in my AI stack */
+    .day-stack { background: var(--bg2); border: 1px solid var(--line); padding: 36px 36px 32px; margin-bottom: 36px; }
+    .day-stack-label { font-family: var(--mono); font-size: 0.65rem; color: var(--red); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px; }
+    .day-stack-title { font-family: var(--cond); font-weight: 800; font-size: clamp(1.7rem, 2.8vw, 2.4rem); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1; margin-bottom: 28px; }
+    .day-stack-title em { color: var(--red); font-style: normal; }
+    .day-stack-grid { display: flex; flex-direction: column; }
+    .day-stack-row { display: grid; grid-template-columns: 92px 1fr; gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: baseline; transition: background 0.2s; }
+    .day-stack-row:last-child { border-bottom: none; }
+    .day-stack-row:hover { background: rgba(232,0,45,0.04); }
+    .day-stack-time { font-family: var(--mono); font-size: 0.78rem; color: var(--red); letter-spacing: 0.08em; }
+    .day-stack-body { font-size: 0.86rem; color: var(--ink2); line-height: 1.75; }
+    .day-stack-body strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 600px) { .day-stack { padding: 24px 22px 22px; } .day-stack-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; } }
+
+    /* Build stack */
+    .build-stack { padding: 28px 32px 24px; background: var(--bg2); border: 1px solid var(--line); }
+    .build-stack-label { font-family: var(--mono); font-size: 0.62rem; color: var(--red); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+    .build-stack-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+    .build-stack-item { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 11px; border: 1px solid var(--line2); color: var(--ink2); }
+    .build-stack-item.primary { color: var(--red); border-color: var(--red); background: rgba(232,0,45,0.06); }
+    .build-stack-foot { font-size: 0.83rem; color: var(--ink2); line-height: 1.7; }
+    .build-stack-foot strong { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -521,6 +589,7 @@
     <li><a href="#partnerships">Alliances</a></li>
     <li><a href="#pov">POV</a></li>
     <li><a href="#insights">Insights</a></li>
+    <li><a href="#ai-stack">AI Stack</a></li>
     <li><a href="#testimonials">Voices</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -1199,6 +1268,113 @@
     <div class="insights-foot fade-up">
       <a href="https://www.linkedin.com/in/santosh-rajput" target="_blank" rel="noopener">Follow on LinkedIn for new pieces</a>
     </div>
+  </div>
+</section>
+
+<section id="ai-stack">
+  <div class="section-inner">
+
+    <div class="section-head fade-up">
+      <div class="section-label">// ENGINE ROOM &middot; BUILT, NOT BOUGHT</div>
+      <h2 class="section-title">Revenue <em>Agents</em></h2>
+      <p class="stack-intro">I don't talk about AI in revenue ops. I run a multi-agent stack on my own pursuits, every day. Not slideware &mdash; production agents with consent gates, confidence thresholds, human-in-the-loop review and an immutable audit trail. Below is the actual stack.</p>
+    </div>
+
+    <!-- ARM HERO -->
+    <div class="arm-hero fade-up">
+      <div class="arm-eyebrow">// FLAGSHIP PLATFORM &middot; IN DAILY USE</div>
+      <h3 class="arm-name">ARM <span>Agentic Revenue Machine</span></h3>
+      <p class="arm-tag">A multi-agent system that turns every customer call into governed, evidence-grounded CRM updates. Built so a CRO can actually approve it for production: nothing writes without a confidence threshold, a human approver, or a full audit trail back to the transcript second it came from.</p>
+
+      <div class="arm-pillars-head">// SIX ARCHITECTURE PILLARS</div>
+      <div class="arm-pillars">
+        <div class="arm-pillar"><div class="arm-pillar-num">01 &middot; INGESTION</div><div class="arm-pillar-title">Signal &amp; Consent</div><div class="arm-pillar-body">Zoom, Meet, Gmail, Calendar and Stripe webhooks behind a hard <code>consent_verified</code> gate. Deepgram Nova-2 for diarised, timestamped transcripts.</div></div>
+        <div class="arm-pillar"><div class="arm-pillar-num">02 &middot; AGENTS</div><div class="arm-pillar-title">Specialist Network</div><div class="arm-pillar-body">Eight agents on the Claude Sonnet API. Stateless. Versioned prompts. Per-agent confidence thresholds (75&ndash;90%) so each one knows when to stop and ask.</div></div>
+        <div class="arm-pillar"><div class="arm-pillar-num">03 &middot; CONTROL</div><div class="arm-pillar-title">Rules + Human-in-the-Loop</div><div class="arm-pillar-body">Auto-write only on low-risk fields. Everything else routes to a HITL card with the evidence snippet &mdash; decisioned in under five minutes from call end.</div></div>
+        <div class="arm-pillar"><div class="arm-pillar-num">04 &middot; SURFACES</div><div class="arm-pillar-title">Live Operator Views</div><div class="arm-pillar-body">Rep HITL card &middot; Pipeline view &middot; CRO dashboard &middot; CEO/CFO forecast &middot; "Ask ARM" natural-language query. Next.js 14, real-time push under five seconds.</div></div>
+        <div class="arm-pillar"><div class="arm-pillar-num">05 &middot; FOUNDATION</div><div class="arm-pillar-title">Multi-Tenant Data Layer</div><div class="arm-pillar-body">Supabase Postgres + pgvector (1536-d). Row-level security on every table. Semantic dedup. Realtime push to all surfaces, no page refresh.</div></div>
+        <div class="arm-pillar"><div class="arm-pillar-num">06 &middot; AUDIT</div><div class="arm-pillar-title">Immutable Evidence Log</div><div class="arm-pillar-body">Append-only. Every write traced to <code>call_id</code>, <code>transcript_timestamp</code>, <code>agent_name</code>, <code>prompt_version</code>, <code>agent_confidence</code> and <code>human_approver</code>.</div></div>
+      </div>
+
+      <div class="arm-agents-head">// THE AGENT NETWORK &middot; 6 SALES + 2 PLATFORM</div>
+      <div class="arm-agents">
+        <div class="arm-agent"><div class="arm-agent-name">Capture</div><div class="arm-agent-role">Pulls signals, commits and objections from every call.</div><div class="arm-agent-conf">always runs</div></div>
+        <div class="arm-agent"><div class="arm-agent-name">Account</div><div class="arm-agent-role">Entity resolution and alias mapping to a single canonical account.</div><div class="arm-agent-conf">conf &middot; 85%</div></div>
+        <div class="arm-agent"><div class="arm-agent-name">Opportunity</div><div class="arm-agent-role">Infers stage, amount and close date from what was actually said.</div><div class="arm-agent-conf">conf &middot; 80%</div></div>
+        <div class="arm-agent"><div class="arm-agent-name">Health</div><div class="arm-agent-role">Flags stale, single-threaded or slipping pursuits before the QBR.</div><div class="arm-agent-conf">always runs</div></div>
+        <div class="arm-agent"><div class="arm-agent-name">Follow-Up</div><div class="arm-agent-role">Drafts the post-call email and tasks. Always draft only &mdash; never auto-sent.</div><div class="arm-agent-conf">draft only</div></div>
+        <div class="arm-agent"><div class="arm-agent-name">Economics</div><div class="arm-agent-role">Computes TCV, ARR and margin from contract terms in the call.</div><div class="arm-agent-conf">conf &middot; 75%</div></div>
+        <div class="arm-agent platform"><div class="arm-agent-name">MDM</div><div class="arm-agent-role">Dedup, merge and canonical record management &mdash; platform-side.</div><div class="arm-agent-conf">conf &middot; 90% &middot; platform</div></div>
+        <div class="arm-agent platform"><div class="arm-agent-name">Reporting</div><div class="arm-agent-role">Pipeline, forecast and risk roll-ups for the CRO and CFO surfaces.</div><div class="arm-agent-conf">always runs &middot; platform</div></div>
+      </div>
+    </div>
+
+    <!-- OTHER AGENTS -->
+    <div class="agents-side-head fade-up">// THE REST OF THE STACK</div>
+    <div class="agents-side-grid">
+      <div class="agent-side-card fade-up">
+        <div class="agent-side-tag">PRE-CALL &middot; BRIEF</div>
+        <div class="agent-side-name">Meeting Prep Agent</div>
+        <div class="agent-side-body">Executive-ready prep brief for every customer meeting. Hard separation between known facts and labeled assumptions &mdash; built for enterprise sales conversations, not generic summaries. Next.js + OpenAI in a backend-only API route.</div>
+      </div>
+      <div class="agent-side-card fade-up">
+        <div class="agent-side-tag">06:30 &middot; MORNING BRIEF</div>
+        <div class="agent-side-name">ICP Marketing Agent</div>
+        <div class="agent-side-body">Tracks my Ideal Customer Profile list overnight &mdash; news, hires, funding, M&amp;A, product moves. Lands as a single morning brief: what changed on the named accounts I care about, ranked by what's likely to move a deal.</div>
+      </div>
+      <div class="agent-side-card fade-up">
+        <div class="agent-side-tag">POST-CALL &middot; DRAFT-ONLY</div>
+        <div class="agent-side-name">Customer Follow-Up Agent</div>
+        <div class="agent-side-body">Drafts the customer follow-up note straight from the call transcript and stated commits. Always in draft state &mdash; I review and send. Removes the post-call latency that kills momentum.</div>
+      </div>
+      <div class="agent-side-card fade-up">
+        <div class="agent-side-tag">VISUALISATION &middot; ON ARM</div>
+        <div class="agent-side-name">ARM Dashboard Agent</div>
+        <div class="agent-side-body">Generates the live operator views on top of ARM data &mdash; pipeline, risk, forecast &mdash; bound to the same evidence log so every metric is traceable back to the call it came from.</div>
+      </div>
+      <div class="agent-side-card fade-up">
+        <div class="agent-side-tag">DAILY &middot; COMMAND SURFACE</div>
+        <div class="agent-side-name">Sales Dashboard</div>
+        <div class="agent-side-body">My personal command surface across the firms I represent &mdash; pursuits, stages, last-touch, next action &mdash; designed to keep me honest. The view I open before anything else.</div>
+      </div>
+      <div class="agent-side-card fade-up">
+        <div class="agent-side-tag">OPS &middot; INTERNAL</div>
+        <div class="agent-side-name">Reimbursement Agent</div>
+        <div class="agent-side-body">Receipts in, structured expense report out. Built to remove the worst hour of the month &mdash; and to prove that "build, not buy" works for the unglamorous workflows too.</div>
+      </div>
+    </div>
+
+    <!-- DAY IN MY AI STACK -->
+    <div class="day-stack fade-up">
+      <div class="day-stack-label">// LAP CHART &middot; A DAY IN MY AI STACK</div>
+      <h3 class="day-stack-title">What This Looks Like on a <em>Tuesday</em></h3>
+      <div class="day-stack-grid">
+        <div class="day-stack-row"><div class="day-stack-time">06:30</div><div class="day-stack-body"><strong>ICP Marketing Agent</strong> drops the morning brief &mdash; overnight news on named accounts, ranked by what's likely to move a deal.</div></div>
+        <div class="day-stack-row"><div class="day-stack-time">07:15</div><div class="day-stack-body"><strong>Sales Dashboard</strong> surfaces yesterday's slipped opportunities and any account ARM's <strong>Health</strong> agent flagged as single-threaded or stale.</div></div>
+        <div class="day-stack-row"><div class="day-stack-time">08:30</div><div class="day-stack-body"><strong>Meeting Prep Agent</strong> generates the brief for the 9am customer call &mdash; known facts on the contact and company on one side, labeled assumptions on the other.</div></div>
+        <div class="day-stack-row"><div class="day-stack-time">09:00</div><div class="day-stack-body">Customer call. Zoom transcript flows into <strong>ARM</strong> behind the consent gate. Deepgram diarises. <strong>Capture, Account, Opportunity, Health, Economics</strong> agents run in parallel.</div></div>
+        <div class="day-stack-row"><div class="day-stack-time">09:50</div><div class="day-stack-body">My <strong>HITL card</strong> arrives under five minutes after call end. I approve the stage move, edit the close date, discard one field. Auto-write commits the rest with a full evidence trail.</div></div>
+        <div class="day-stack-row"><div class="day-stack-time">10:00</div><div class="day-stack-body"><strong>Customer Follow-Up Agent</strong> drafts the note from the transcript and the commits I just approved. I read, edit, send.</div></div>
+        <div class="day-stack-row"><div class="day-stack-time">14:00</div><div class="day-stack-body"><strong>ARM Dashboard Agent</strong> updates the pipeline view. CRO dashboard re-ranks risk in real-time. <strong>"Ask ARM"</strong> answers a natural-language pipeline question &mdash; evidence-grounded, no hallucination.</div></div>
+        <div class="day-stack-row"><div class="day-stack-time">17:30</div><div class="day-stack-body"><strong>Reimbursement Agent</strong> processes the day's receipts. Done.</div></div>
+      </div>
+    </div>
+
+    <!-- BUILD STACK -->
+    <div class="build-stack fade-up">
+      <div class="build-stack-label">// BUILT WITH</div>
+      <div class="build-stack-row">
+        <div class="build-stack-item primary">Claude</div>
+        <div class="build-stack-item">Claude Sonnet API</div>
+        <div class="build-stack-item">OpenAI API</div>
+        <div class="build-stack-item">Deepgram Nova-2</div>
+        <div class="build-stack-item">Next.js 14</div>
+        <div class="build-stack-item">Supabase + pgvector</div>
+        <div class="build-stack-item">Google Workspace APIs</div>
+      </div>
+      <p class="build-stack-foot"><strong>All ten agents are live and in daily use.</strong> Some run only on my machine as a deliberate guardrail &mdash; sensitive workflows stay local by design, not because they're unfinished.</p>
+    </div>
+
   </div>
 </section>
 
