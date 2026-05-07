@@ -623,6 +623,111 @@
     .build-stack-item.primary { color: var(--red); border-color: var(--red); background: rgba(232,0,45,0.06); }
     .build-stack-foot { font-size: 0.83rem; color: var(--ink2); line-height: 1.7; }
     .build-stack-foot strong { color: var(--ink); }
+
+    /* === VISUAL ENHANCEMENTS === */
+
+    /* Section dividers — thin red racing-stripe at top-left of every non-hero section */
+    section:not(#hero)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 64px;
+      width: 88px;
+      height: 2px;
+      background: var(--red);
+      z-index: 1;
+    }
+    @media (max-width: 1024px) {
+      section:not(#hero)::before { left: 32px; width: 64px; }
+    }
+
+    /* Highlights tile staggered fade-in on scroll-into-view */
+    .highlights-strip .hl-tile { opacity: 0; transform: translateY(8px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .highlights-strip.vis .hl-tile { opacity: 1; transform: none; }
+    .highlights-strip.vis .hl-tile:nth-child(1) { transition-delay: 0.05s; }
+    .highlights-strip.vis .hl-tile:nth-child(2) { transition-delay: 0.10s; }
+    .highlights-strip.vis .hl-tile:nth-child(3) { transition-delay: 0.15s; }
+    .highlights-strip.vis .hl-tile:nth-child(4) { transition-delay: 0.20s; }
+    .highlights-strip.vis .hl-tile:nth-child(5) { transition-delay: 0.25s; }
+    .highlights-strip.vis .hl-tile:nth-child(6) { transition-delay: 0.30s; }
+    .highlights-strip.vis .hl-tile:nth-child(7) { transition-delay: 0.35s; }
+    .highlights-strip.vis .hl-tile:nth-child(8) { transition-delay: 0.40s; }
+
+    /* Hover lift polish — Why Me, Roles, Engage cards */
+    .why-card { transition: background 0.25s, transform 0.25s ease; }
+    .why-card:hover { transform: translateY(-2px); }
+    .role-card { transition: background 0.25s, transform 0.25s ease; position: relative; overflow: hidden; }
+    .role-card:hover { transform: translateY(-2px); }
+    .role-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--red); transform: scaleY(0); transform-origin: top; transition: transform 0.4s ease; z-index: 1; }
+    .role-card:hover::before { transform: scaleY(1); }
+    .engage-card { transition: background 0.3s, transform 0.25s ease; }
+    .engage-card:hover { transform: translateY(-2px); }
+
+    /* Hero photo telemetry overlay — racing HUD strip at bottom of photo */
+    .driver-photo-box { position: relative; }
+    .driver-photo-box::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .driver-tele {
+      position: absolute;
+      bottom: 14px; left: 14px; right: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      background: rgba(0,0,0,0.65);
+      border: 1px solid rgba(232,0,45,0.5);
+      z-index: 2;
+      backdrop-filter: blur(4px);
+    }
+    .driver-tele-pulse {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: tele-pulse 1.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .driver-tele-text { color: var(--red); flex-grow: 1; font-weight: 600; }
+    .driver-tele-meta { color: var(--ink2); font-size: 0.5rem; letter-spacing: 0.16em; }
+    @keyframes tele-pulse {
+      0%, 100% { opacity: 0.45; box-shadow: 0 0 0 0 rgba(232,0,45,0.7); }
+      50% { opacity: 1; box-shadow: 0 0 0 6px rgba(232,0,45,0); }
+    }
+
+    /* Why Me — race-position chips (replaces // 01 mono labels) */
+    .why-pos {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      background: var(--red);
+      color: var(--ink);
+      font-family: var(--cond);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .why-card:hover .why-pos { background: var(--red2); transform: translateX(4px); }
+
+    /* Custom cursor on prominent CTAs — small red target reticle */
+    .btn-f1, .btn-cv, .nav-cta, .engage-cta, .role-cta, .pov-cta {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='5' fill='none' stroke='%23e8002d' stroke-width='1.5'/><circle cx='12' cy='12' r='1.6' fill='%23e8002d'/></svg>") 12 12, pointer;
+    }
   </style>
 </head>
 <body>
@@ -703,7 +808,14 @@
     </div>
   </div>
   <div class="driver-panel">
-    <div class="driver-photo-box"><img src="uploads/Santosh Rajput_Profile Pic jpeg.jpg" alt="Santosh Rajput"/></div>
+    <div class="driver-photo-box">
+      <img src="uploads/Santosh Rajput_Profile Pic jpeg.jpg" alt="Santosh Rajput"/>
+      <div class="driver-tele">
+        <span class="driver-tele-pulse"></span>
+        <span class="driver-tele-text">// LAP 24 &middot; ACTIVE</span>
+        <span class="driver-tele-meta">FRONT-LINE</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -925,25 +1037,25 @@
     <div class="why-grid">
 
       <div class="why-card fade-up">
-        <div class="why-num">// 01</div>
+        <div class="why-pos">P1</div>
         <div class="why-headline">I have carried the number.</div>
         <p class="why-body">Real P&amp;L ownership across 10 firms. $30M to $180M+ peak. 4&times; in 3 years at Ness. 2&times; QoQ at USEReady. ~80% strategic-account growth at ITC. The number is the work &mdash; not the dashboard around it.</p>
       </div>
 
       <div class="why-card fade-up">
-        <div class="why-num">// 02</div>
+        <div class="why-pos">P2</div>
         <div class="why-headline">I close, then I grow.</div>
         <p class="why-body">Hunter and farmer in the same engagement. Verizon $130M&rarr;$180M. Ness $17M&rarr;$70M. UK greenfield $2M&rarr;$40M. I take the first call, sign the SOW, and run second- and third-tower expansion until the relationship moves from <em>challenger</em> to <em>trusted partner</em>.</p>
       </div>
 
       <div class="why-card fade-up">
-        <div class="why-num">// 03</div>
+        <div class="why-pos">P3</div>
         <div class="why-headline">I&apos;m in the BFSI rooms.</div>
         <p class="why-body">Citi &middot; BoA &middot; HSBC &middot; Goldman &middot; Morgan Stanley &middot; BNY Mellon &middot; BlackRock &middot; Schroders &middot; TIAA &middot; Nasdaq. I&apos;ve sat inside these accounts. I know how the relationship signals move before they hit the P&amp;L.</p>
       </div>
 
       <div class="why-card fade-up">
-        <div class="why-num">// 04</div>
+        <div class="why-pos">P4</div>
         <div class="why-headline">I ship the AI, not pitch it.</div>
         <p class="why-body">13-agent stack on my own pursuits, every day &mdash; ARM, Meeting Prep, ICP Marketing, Customer Follow-Up. Plus 30% account-wide efficiency from Co-Pilot + GitHub at BlackRock. Built, not bought. I won&apos;t ask CEOs to bet on agentic AI without betting my own pipeline first.</p>
       </div>
