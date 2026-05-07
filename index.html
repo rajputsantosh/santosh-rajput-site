@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Santosh Rajput — Revenue Architect &amp; Operator | IT Services, BFSI &amp; AI Transformation</title>
-  <meta name="description" content="Front-line revenue operator for IT services and PE-backed firms scaling $20M to $200M+. 25+ years building, signing and scaling revenue across BFSI, Healthcare, Retail and Manufacturing. Multi-year transformational deals shaped, signed, grown. Currently building agentic revenue infrastructure (ARM). Lead from the front."/>
+  <meta name="description" content="Front-line revenue operator for IT services and PE-backed firms scaling $20M to $200M+. 24+ years building, signing and scaling revenue across BFSI, Healthcare, Retail and Manufacturing. Multi-year transformational deals shaped, signed, grown. Currently building agentic revenue infrastructure (ARM). Lead from the front."/>
   <link rel="canonical" href="https://rajputsantosh.github.io/santosh-rajput-site/"/>
   <meta name="author" content="Santosh Rajput"/>
   <meta name="robots" content="index,follow,max-image-preview:large"/>
@@ -12,7 +12,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="profile"/>
   <meta property="og:title" content="Santosh Rajput — Revenue Architect &amp; Operator"/>
-  <meta property="og:description" content="Front-line revenue operator for IT services and PE-backed firms. 25+ years scaling $30M to $180M+. Multi-year transformational deals shaped, signed, grown. Lead from the front."/>
+  <meta property="og:description" content="Front-line revenue operator for IT services and PE-backed firms. 24+ years scaling $30M to $180M+. Multi-year transformational deals shaped, signed, grown. Lead from the front."/>
   <meta property="og:url" content="https://rajputsantosh.github.io/santosh-rajput-site/"/>
   <meta property="og:image" content="https://rajputsantosh.github.io/santosh-rajput-site/uploads/og-card.png"/>
   <meta property="og:image:width" content="1200"/>
@@ -49,7 +49,7 @@
       {"@type":"CollegeOrUniversity","name":"Punjab University"}
     ],
     "knowsAbout":["IT Services","BFSI","Banking & Financial Services","Digital Transformation","AI","Machine Learning","Data & Analytics","Cloud","Cybersecurity","Managed Services","Turnkey Transformation","GCC Strategy","Strategic Account Management","Pursuit Closure","Pipeline Build","Partnership Build","Revenue Operations","Operating Partner"],
-    "description":"Front-line revenue operator for IT services and PE-backed firms scaling $20M to $200M+. 25+ years building, signing and scaling revenue across BFSI, Healthcare, Retail and Manufacturing. Multi-year transformational deals shaped, signed and grown across North America, EMEA and APAC. Currently building agentic revenue infrastructure (ARM) — a multi-agent system turning every customer call into governed, evidence-grounded CRM updates."
+    "description":"Front-line revenue operator for IT services and PE-backed firms scaling $20M to $200M+. 24+ years building, signing and scaling revenue across BFSI, Healthcare, Retail and Manufacturing. Multi-year transformational deals shaped, signed and grown across North America, EMEA and APAC. Currently building agentic revenue infrastructure (ARM) — a multi-agent system turning every customer call into governed, evidence-grounded CRM updates."
   }
   </script>
 
@@ -534,6 +534,41 @@
     .num-glow { animation: num-pulse 1.6s ease-out; }
     @keyframes num-pulse { 0% { text-shadow: 0 0 0 rgba(232,0,45,0); } 30% { text-shadow: 0 0 22px rgba(232,0,45,0.7); } 100% { text-shadow: 0 0 0 rgba(232,0,45,0); } }
 
+    /* BUYER-SPECIFIC CTA ROW (Contact section) */
+    .cta-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--red); margin-bottom: 36px; }
+    .cta-pill { background: var(--bg2); padding: 18px 22px; text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 14px; transition: background 0.2s, color 0.2s; }
+    .cta-pill:hover { background: var(--red); color: var(--ink); }
+    .cta-pill-tag { font-family: var(--mono); font-size: 0.55rem; color: var(--red); letter-spacing: 0.16em; }
+    .cta-pill:hover .cta-pill-tag { color: var(--ink); }
+    .cta-pill-text { font-family: var(--cond); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em; flex-grow: 1; line-height: 1.2; }
+    .cta-pill-arrow { font-family: var(--cond); font-weight: 700; font-size: 1.2rem; transition: transform 0.2s; }
+    .cta-pill:hover .cta-pill-arrow { transform: translateX(4px); }
+    @media (max-width: 720px) { .cta-row { grid-template-columns: 1fr; } }
+
+    /* WHY ME / THE EDGE */
+    #why-me { background: var(--bg); }
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .why-card { background: var(--bg2); padding: 32px 30px 30px; display: flex; flex-direction: column; gap: 14px; transition: background 0.25s; position: relative; overflow: hidden; }
+    .why-card:hover { background: var(--bg3); }
+    .why-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--red); transform: scaleY(0); transform-origin: top; transition: transform 0.4s ease; }
+    .why-card:hover::before { transform: scaleY(1); }
+    .why-num { font-family: var(--mono); font-size: 0.62rem; color: var(--red); letter-spacing: 0.16em; }
+    .why-headline { font-family: var(--cond); font-weight: 800; font-size: 1.55rem; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.1; color: var(--ink); }
+    .why-body { font-size: 0.86rem; color: var(--ink2); line-height: 1.75; flex-grow: 1; }
+    .why-body em { color: var(--red); font-style: normal; font-weight: 600; }
+    @media (max-width: 800px) { .why-grid { grid-template-columns: 1fr; } }
+
+    /* HIGHLIGHTS STRIP (top of Wins) */
+    .highlights-strip { margin-bottom: 36px; padding: 24px 26px 22px; background: var(--bg3); border: 1px solid var(--line); }
+    .hl-eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--red); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .hl-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); }
+    .hl-tile { background: var(--bg); padding: 14px 16px 14px; display: flex; flex-direction: column; gap: 4px; transition: background 0.2s; }
+    .hl-tile:hover { background: var(--bg2); }
+    .hl-num { font-family: var(--cond); font-weight: 800; font-size: 1.5rem; color: var(--red); letter-spacing: 0.01em; line-height: 1.05; }
+    .hl-label { font-family: var(--mono); font-size: 0.55rem; color: var(--ink2); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; }
+    @media (max-width: 900px) { .hl-row { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .hl-row { grid-template-columns: 1fr; } }
+
     /* ROLES / STARTING GRID */
     #roles { background: var(--bg2); }
     .roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
@@ -617,6 +652,7 @@
     <li><a href="#pov">POV</a></li>
     <li><a href="#ai-stack">AI Stack</a></li>
     <li><a href="#roles">Roles</a></li>
+    <li><a href="#why-me">Why Me</a></li>
     <li><a href="#insights">Insights</a></li>
     <li><a href="#testimonials">Voices</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -663,14 +699,14 @@
     <div class="hero-eyebrow"><span>DRIVER STATUS: ACTIVE</span><span class="blink">█</span></div>
     <h1 class="hero-name">Santosh<span class="surname">Rajput</span></h1>
     <div class="hero-title">Revenue Architect + Operator — IT Services · BFSI · AI</div>
-    <p class="hero-bio"><span style="color:var(--ink);font-weight:500;font-size:1rem;display:block;padding:14px 0 14px 16px;border-left:2px solid var(--red);margin-bottom:26px;line-height:1.65;">I help IT-services CEOs and PE-backed portfolios scale revenue from $20M to $200M+ by embedding as the front-line revenue leader &mdash; building the GTM, working pursuits personally, and closing eight- and nine-figure transformational deals.</span><strong style="color:var(--ink);font-weight:600;">I lead from the front &mdash; in the room with the client, not behind a deck.</strong><br/><br/><span style="color:var(--ink);font-weight:500;">25+ years on the front line. $30M to $180M+ scaled across BFSI, Healthcare, Retail and Manufacturing. Six markets. Four continents.</span><br/><br/>Today: founder-led services CEOs, PE-backed portfolios and AI-native firms &mdash; enterprise sales, partner-led revenue, Services-as-Software, AI-led transformation.<br/><br/><span style="color:var(--ink2);font-style:italic;">I learn fast, unlearn faster, and stay close to where the market is moving.</span></p>
+    <p class="hero-bio"><span style="color:var(--ink);font-weight:500;font-size:1rem;display:block;padding:14px 0 14px 16px;border-left:2px solid var(--red);margin-bottom:26px;line-height:1.65;">I help IT-services CEOs and PE-backed portfolios scale revenue from $20M to $200M+ by embedding as the front-line revenue leader &mdash; building the GTM, working pursuits personally, and closing eight- and nine-figure transformational deals.</span><strong style="color:var(--ink);font-weight:600;">I lead from the front &mdash; in the room with the client, not behind a deck.</strong><br/><br/><span style="color:var(--ink);font-weight:500;">24+ years on the front line. $30M to $180M+ scaled across BFSI, Healthcare, Retail and Manufacturing. Six markets. Four continents.</span><br/><br/>Today: founder-led services CEOs, PE-backed portfolios and AI-native firms &mdash; enterprise sales, partner-led revenue, Services-as-Software, AI-led transformation.<br/><br/><span style="color:var(--ink2);font-style:italic;">I learn fast, unlearn faster, and stay close to where the market is moving.</span></p>
     <div class="hero-actions">
       <a href="mailto:rajputsantosh@gmail.com" class="btn-f1">Contact Me →</a>
       <a href="uploads/Santosh%20Rajput_Resume_Jan%2026.docx" class="btn-cv" download>↓ Download CV</a>
       <a href="#experience" class="btn-ghost">View Career</a>
     </div>
     <div class="telemetry-bar">
-      <div class="telem-stat" data-val="25" data-prefix=""><div class="telem-label">// FRONT-LINE YEARS</div><div class="telem-value"><span class="tnum">25</span><span>+ YRS</span></div></div>
+      <div class="telem-stat" data-val="24" data-prefix=""><div class="telem-label">// FRONT-LINE YEARS</div><div class="telem-value"><span class="tnum">24</span><span>+ YRS</span></div></div>
       <div class="telem-stat" data-val="180" data-prefix="$"><div class="telem-label">// PEAK P&amp;L RUN</div><div class="telem-value"><span class="tnum">$180</span><span>M</span></div></div>
       <div class="telem-stat" data-val="6" data-prefix=""><div class="telem-label">// MARKETS BUILT IN</div><div class="telem-value"><span class="tnum">6</span><span>+</span></div></div>
       <div class="telem-stat" data-val="10" data-prefix=""><div class="telem-label">// INDUSTRIES SOLD INTO</div><div class="telem-value"><span class="tnum">10</span><span>+</span></div></div>
@@ -884,6 +920,43 @@
         <div class="role-title">Not sure which fits?</div>
         <p class="role-desc">Send the company stage, current revenue, and the specific commercial moment. Same-week response with a candid view on whether I can move the number &mdash; or whether you need someone else.</p>
         <a href="mailto:rajputsantosh@gmail.com?subject=Engagement%20enquiry&amp;body=Hi%20Santosh%2C%0A%0A-%20Company%20%2F%20stage%3A%0A-%20Current%20revenue%3A%0A-%20Specific%20brief%3A%0A-%20Target%20start%3A%0A%0AThanks." class="role-cta">Open a conversation &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="why-me">
+  <div class="section-inner">
+    <div class="section-head fade-up">
+      <div class="section-label">// THE EDGE &middot; WHY ME</div>
+      <h2 class="section-title">Why <em>Me</em></h2>
+      <p class="section-sub">Four reasons buyers pick me over the alternatives. Each one is on the resume.</p>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-card fade-up">
+        <div class="why-num">// 01</div>
+        <div class="why-headline">I have carried the number.</div>
+        <p class="why-body">Real P&amp;L ownership across 10 firms. $30M to $180M+ peak. 4&times; in 3 years at Ness. 2&times; QoQ at USEReady. ~80% strategic-account growth at ITC. The number is the work &mdash; not the dashboard around it.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <div class="why-num">// 02</div>
+        <div class="why-headline">I close, then I grow.</div>
+        <p class="why-body">Hunter and farmer in the same engagement. Verizon $130M&rarr;$180M. Ness $17M&rarr;$70M. UK greenfield $2M&rarr;$40M. I take the first call, sign the SOW, and run second- and third-tower expansion until the relationship moves from <em>challenger</em> to <em>trusted partner</em>.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <div class="why-num">// 03</div>
+        <div class="why-headline">I&apos;m in the BFSI rooms.</div>
+        <p class="why-body">Citi &middot; BoA &middot; HSBC &middot; Goldman &middot; Morgan Stanley &middot; BNY Mellon &middot; BlackRock &middot; Schroders &middot; TIAA &middot; Nasdaq. I&apos;ve sat inside these accounts. I know how the relationship signals move before they hit the P&amp;L.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <div class="why-num">// 04</div>
+        <div class="why-headline">I ship the AI, not pitch it.</div>
+        <p class="why-body">13-agent stack on my own pursuits, every day &mdash; ARM, Meeting Prep, ICP Marketing, Customer Follow-Up. Plus 30% account-wide efficiency from Co-Pilot + GitHub at BlackRock. Built, not bought. I won&apos;t ask CEOs to bet on agentic AI without betting my own pipeline first.</p>
       </div>
 
     </div>
@@ -1256,8 +1329,23 @@
     <div class="section-head fade-up">
       <div class="section-label">// TROPHY CABINET</div>
       <h2 class="section-title">Race <em>Wins</em></h2>
-      <p class="section-sub">A selection of large managed services contracts and turnkey transformation programs across BFSI, telecom, retail, hi-tech and public sector — the deals behind the P&amp;L numbers.</p>
+      <p class="section-sub">A selection of large managed services contracts and turnkey transformation programs across BFSI, telecom, retail, hi-tech and public sector &mdash; the deals behind the P&amp;L numbers.</p>
     </div>
+
+    <div class="highlights-strip fade-up">
+      <div class="hl-eyebrow">// SELECTED HIGHLIGHTS &middot; THE NUMBERS BEHIND THE STORIES</div>
+      <div class="hl-row">
+        <div class="hl-tile"><div class="hl-num">$120M</div><div class="hl-label">EMC AMS / 3-yr (Tech Mahindra)</div></div>
+        <div class="hl-tile"><div class="hl-num">$130&rarr;$180M</div><div class="hl-label">Verizon Strategic Account</div></div>
+        <div class="hl-tile"><div class="hl-num">4&times;</div><div class="hl-label">Ness Hi-Tech &amp; Retail BU</div></div>
+        <div class="hl-tile"><div class="hl-num">~3&times;</div><div class="hl-label">Liquidhub Exit Multiple</div></div>
+        <div class="hl-tile"><div class="hl-num">2&times;</div><div class="hl-label">Cygnet Cap Raise / 9 Mo</div></div>
+        <div class="hl-tile"><div class="hl-num">30%</div><div class="hl-label">Co-Pilot Efficiency &middot; BlackRock</div></div>
+        <div class="hl-tile"><div class="hl-num">$39M</div><div class="hl-label">Retail Supply Chain Savings</div></div>
+        <div class="hl-tile"><div class="hl-num">$30M</div><div class="hl-label">Microsoft Partner-Mgmt Savings</div></div>
+      </div>
+    </div>
+
     <div class="wins-grid">
 
       <div class="win-card fade-up">
@@ -1538,11 +1626,19 @@
 
 <section id="contact">
   <div class="section-inner">
+
+    <div class="cta-row fade-up">
+      <a href="mailto:rajputsantosh@gmail.com?subject=Fractional%20CRO%20%2F%20Operating%20Engagement&amp;body=Hi%20Santosh%2C%0A%0A-%20Company%20%2F%20stage%3A%0A-%20Current%20revenue%3A%0A-%20Specific%20brief%3A%0A-%20Target%20start%3A%0A%0AThanks." class="cta-pill"><span class="cta-pill-tag">// 01</span><span class="cta-pill-text">Discuss a Fractional CRO &amp; Operator Engagement</span><span class="cta-pill-arrow">&rarr;</span></a>
+      <a href="mailto:rajputsantosh@gmail.com?subject=Senior%20Client%20Partner%20%2F%20Strategic%20Account%20Role&amp;body=Hi%20Santosh%2C%0A%0A-%20Firm%3A%0A-%20Anchor%20account%20%2F%20vertical%3A%0A-%20Stage%3A%0A%0AThanks." class="cta-pill"><span class="cta-pill-tag">// 02</span><span class="cta-pill-text">Talk About a Senior Client Partner Role</span><span class="cta-pill-arrow">&rarr;</span></a>
+      <a href="mailto:rajputsantosh@gmail.com?subject=Board%20%2F%20Operating%20Partner%20Conversation&amp;body=Hi%20Santosh%2C%0A%0A-%20Firm%20%2F%20fund%3A%0A-%20Portfolio%20%2F%20company%3A%0A-%20Brief%3A%0A%0AThanks." class="cta-pill"><span class="cta-pill-tag">// 03</span><span class="cta-pill-text">Open a Board / Operating Partner Conversation</span><span class="cta-pill-arrow">&rarr;</span></a>
+      <a href="speaking.html" class="cta-pill"><span class="cta-pill-tag">// 04</span><span class="cta-pill-text">Invite to a Speaking Session or CEO Offsite</span><span class="cta-pill-arrow">&rarr;</span></a>
+    </div>
+
     <div class="contact-layout">
       <div class="fade-up">
         <div class="section-label">// RADIO CHECK</div>
         <h2 class="contact-title">Ready to <em>Cross the<br/>Finish Line?</em></h2>
-        <p class="contact-sub">Front-line revenue operator. 25+ years scaling IT-services revenue from $30M to $180M+ across BFSI, Healthcare, Retail and Manufacturing &mdash; multi-year transformational deals shaped, signed, grown. Currently building agentic revenue infrastructure (ARM). Let's talk about what we can build together.</p>
+        <p class="contact-sub">Front-line revenue operator. 24+ years scaling IT-services revenue from $30M to $180M+ across BFSI, Healthcare, Retail and Manufacturing &mdash; multi-year transformational deals shaped, signed, grown. Currently building agentic revenue infrastructure (ARM). Let's talk about what we can build together.</p>
       </div>
       <div class="contact-cards fade-up">
         <a href="mailto:rajputsantosh@gmail.com" class="contact-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m2 7 10 7 10-7"/></svg><div><div class="contact-card-label">Email</div><div class="contact-card-val">rajputsantosh@gmail.com</div></div></a>
@@ -1647,7 +1743,7 @@ function countUp(el, target, prefix, duration) {
 }
 // Modal data for telemetry + speedometer
 const modalData = {
-  t0: { eyebrow: '// CAREER SPAN', title: '25+ Years In Motion', big: '25+', sub: 'YEARS · ENTERPRISE SALES LEADERSHIP', rows: [
+  t0: { eyebrow: '// CAREER SPAN', title: '24+ Years In Motion', big: '24+', sub: 'YEARS · ENTERPRISE SALES LEADERSHIP', rows: [
     ['Most Recent Role', 'SVP, USEReady Inc. (NYC)'],
     ['Cities Lived/Worked', 'Chennai · Singapore · Mumbai · Trivandrum · KL · London · Toronto · Chicago · NJ · NY'],
     ['Continents', '4 — Asia · Europe · North America · ANZ partners'],
@@ -1716,7 +1812,7 @@ const modalData = {
     ['Role', 'Pursuit shaping · executive sponsor management · contract close · post-sale account growth'],
     ['Named example', 'EMC managed services — multi-year program won during the "Defend and Grow" East Coast initiative'],
     ['Style', 'Hands-on, in the room with the client — not behind a deck'],
-  ], note: 'Large, multi-year transformational deals are where I have spent the past 25+ years — turning vendor relationships into strategic partnerships, and converting cloud / data / AI / managed services into measurable business value.' },
+  ], note: 'Large, multi-year transformational deals are where I have spent the past 24+ years — turning vendor relationships into strategic partnerships, and converting cloud / data / AI / managed services into measurable business value.' },
 };
 
 function openModal(key) {
