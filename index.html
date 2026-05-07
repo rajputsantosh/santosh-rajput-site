@@ -534,17 +534,6 @@
     .num-glow { animation: num-pulse 1.6s ease-out; }
     @keyframes num-pulse { 0% { text-shadow: 0 0 0 rgba(232,0,45,0); } 30% { text-shadow: 0 0 22px rgba(232,0,45,0.7); } 100% { text-shadow: 0 0 0 rgba(232,0,45,0); } }
 
-    /* BUYER-SPECIFIC CTA ROW (Contact section) */
-    .cta-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--red); margin-bottom: 36px; }
-    .cta-pill { background: var(--bg2); padding: 18px 22px; text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 14px; transition: background 0.2s, color 0.2s; }
-    .cta-pill:hover { background: var(--red); color: var(--ink); }
-    .cta-pill-tag { font-family: var(--mono); font-size: 0.55rem; color: var(--red); letter-spacing: 0.16em; }
-    .cta-pill:hover .cta-pill-tag { color: var(--ink); }
-    .cta-pill-text { font-family: var(--cond); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em; flex-grow: 1; line-height: 1.2; }
-    .cta-pill-arrow { font-family: var(--cond); font-weight: 700; font-size: 1.2rem; transition: transform 0.2s; }
-    .cta-pill:hover .cta-pill-arrow { transform: translateX(4px); }
-    @media (max-width: 720px) { .cta-row { grid-template-columns: 1fr; } }
-
     /* WHY ME / THE EDGE */
     #why-me { background: var(--bg); }
     .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
@@ -1626,13 +1615,6 @@
 
 <section id="contact">
   <div class="section-inner">
-
-    <div class="cta-row fade-up">
-      <a href="mailto:rajputsantosh@gmail.com?subject=Fractional%20CRO%20%2F%20Operating%20Engagement&amp;body=Hi%20Santosh%2C%0A%0A-%20Company%20%2F%20stage%3A%0A-%20Current%20revenue%3A%0A-%20Specific%20brief%3A%0A-%20Target%20start%3A%0A%0AThanks." class="cta-pill"><span class="cta-pill-tag">// 01</span><span class="cta-pill-text">Discuss a Fractional CRO &amp; Operator Engagement</span><span class="cta-pill-arrow">&rarr;</span></a>
-      <a href="mailto:rajputsantosh@gmail.com?subject=Senior%20Client%20Partner%20%2F%20Strategic%20Account%20Role&amp;body=Hi%20Santosh%2C%0A%0A-%20Firm%3A%0A-%20Anchor%20account%20%2F%20vertical%3A%0A-%20Stage%3A%0A%0AThanks." class="cta-pill"><span class="cta-pill-tag">// 02</span><span class="cta-pill-text">Talk About a Senior Client Partner Role</span><span class="cta-pill-arrow">&rarr;</span></a>
-      <a href="mailto:rajputsantosh@gmail.com?subject=Board%20%2F%20Operating%20Partner%20Conversation&amp;body=Hi%20Santosh%2C%0A%0A-%20Firm%20%2F%20fund%3A%0A-%20Portfolio%20%2F%20company%3A%0A-%20Brief%3A%0A%0AThanks." class="cta-pill"><span class="cta-pill-tag">// 03</span><span class="cta-pill-text">Open a Board / Operating Partner Conversation</span><span class="cta-pill-arrow">&rarr;</span></a>
-      <a href="speaking.html" class="cta-pill"><span class="cta-pill-tag">// 04</span><span class="cta-pill-text">Invite to a Speaking Session or CEO Offsite</span><span class="cta-pill-arrow">&rarr;</span></a>
-    </div>
 
     <div class="contact-layout">
       <div class="fade-up">
