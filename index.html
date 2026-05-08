@@ -313,6 +313,7 @@
     #testimonials { background: var(--bg2); }
     .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
     .testi-card { background: var(--bg); padding: 28px 24px; display: flex; flex-direction: column; gap: 18px; }
+    .testi-context { font-family: var(--mono); font-size: 0.55rem; color: var(--red); letter-spacing: 0.14em; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: -6px; }
     .testi-quote { font-size: 0.85rem; color: var(--ink2); line-height: 1.75; font-style: italic; padding-left: 14px; border-left: 2px solid var(--red); }
     .testi-person { display: flex; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid var(--line); flex-grow: 1; }
     .testi-avatar { width: 52px; height: 52px; min-width: 52px; border-radius: 50%; background: linear-gradient(135deg, rgba(232,0,45,0.18), rgba(232,0,45,0.06)); border: 1.5px solid var(--red); display: flex; align-items: center; justify-content: center; font-family: var(--cond); font-weight: 800; color: var(--red); font-size: 1.15rem; letter-spacing: 0.04em; box-shadow: 0 0 0 4px rgba(232,0,45,0.05); }
@@ -1904,18 +1905,62 @@
   <div class="section-inner">
     <div class="section-head fade-up"><div class="section-label">// PADDOCK VOICES</div><h2 class="section-title">What Leaders <em>Have Said</em></h2></div>
     <div class="testi-meta fade-up">
-      <div class="testi-meta-cell"><div class="testi-meta-num">6</div><div class="testi-meta-label">// Voices · CXOs &amp; Leaders</div></div>
+      <div class="testi-meta-cell"><div class="testi-meta-num">7</div><div class="testi-meta-label">// Voices &middot; CXOs &amp; Leaders</div></div>
       <div class="testi-meta-cell"><div class="testi-meta-num">5</div><div class="testi-meta-label">// C-Suite Endorsements</div></div>
       <div class="testi-meta-cell"><div class="testi-meta-num">4</div><div class="testi-meta-label">// Continents Represented</div></div>
       <div class="testi-meta-cell"><div class="testi-meta-num">15+</div><div class="testi-meta-label">// LinkedIn Recommendations</div></div>
     </div>
     <div class="testi-grid">
-      <div class="testi-card fade-up"><div class="testi-quote">"Santosh delivered and built sustaining relationships across two divergent organisations under exceptionally challenging circumstances. UST have lost a star performer and I have lost a business head I can trust."</div><div class="testi-person"><div class="testi-avatar">RW</div><div><div class="testi-name">Richard Wallace</div><div class="testi-role">Global CTO / CIO</div></div></div><a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a></div>
-      <div class="testi-card fade-up"><div class="testi-quote">"Santosh has provided trusted counsel and strong leadership throughout. He has an exceptional awareness of cultural differences and a natural ability to find and resolve issues."</div><div class="testi-person"><div class="testi-avatar">DL</div><div><div class="testi-name">Darwin Lee</div><div class="testi-role">CEO, Transvault Software</div></div></div><a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a></div>
-      <div class="testi-card fade-up"><div class="testi-quote">"One of the reasons I chose UST Global to partner Shoppers Stop was Santosh's approach during the entire pre-sales process. He understood our challenges and got his team to respond quickly."</div><div class="testi-person"><div class="testi-avatar">RS</div><div><div class="testi-name">Ranjit Satyanath</div><div class="testi-role">CIO, Shoppers Stop</div></div></div><a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a></div>
-      <div class="testi-card fade-up"><div class="testi-quote">"Santosh is a great asset in any organization. He manages each project with an eye toward the big picture and watches the bottom line like a hawk without losing sight of strategic objectives."</div><div class="testi-person"><div class="testi-avatar">AT</div><div><div class="testi-name">Ali Tabassi</div><div class="testi-role">CEO / COO</div></div></div><a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a></div>
-      <div class="testi-card fade-up"><div class="testi-quote">"From zero base, he took the relationship with Carrefour to a multi-million transaction. He is very observant and passionate — a great sales leader with a keen business sense."</div><div class="testi-person"><div class="testi-avatar">SB</div><div><div class="testi-name">Subhodip Bandyopadhyay</div><div class="testi-role">P&amp;L Owner</div></div></div><a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a></div>
-      <div class="testi-card fade-up"><div class="testi-quote">"Santosh brings high levels of stakeholder management, integrity and energy. His ability to understand client requirements and tailor appropriate solutions is exceptional."</div><div class="testi-person"><div class="testi-avatar">AS</div><div><div class="testi-name">Ari Sanmuganathan</div><div class="testi-role">Co-Founder, Culmen Group</div></div></div><a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a></div>
+
+      <div class="testi-card fade-up">
+        <div class="testi-context">// March 2012 &middot; Worked at different companies</div>
+        <div class="testi-quote">"Santosh delivered and built sustaining relationships across two divergent organisations under exceptionally challenging circumstances. UST have lost a star performer and I have lost a business head I can trust."</div>
+        <div class="testi-person"><div class="testi-avatar">RW</div><div><div class="testi-name">Richard Wallace</div><div class="testi-role">Global CTO | CIO</div></div></div>
+        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
+      </div>
+
+      <div class="testi-card fade-up">
+        <div class="testi-context">// March 2012 &middot; Client at UST</div>
+        <div class="testi-quote">"Santosh has provided trusted counsel and strong leadership throughout the time we partnered with UST. He has an exceptional awareness of cultural differences and a natural ability to find and resolve issues preventing progress. I would have no hesitation in working with him again or recommending him to anyone looking for a dedicated and motivated leader of people and strategy."</div>
+        <div class="testi-person"><div class="testi-avatar">DL</div><div><div class="testi-name">Darwin Lee</div><div class="testi-role">CEO, Transvault Software</div></div></div>
+        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
+      </div>
+
+      <div class="testi-card fade-up">
+        <div class="testi-context">// March 2012 &middot; Client at Shoppers Stop</div>
+        <div class="testi-quote">"One of the reasons I chose UST Global to partner Shoppers Stop as an important Technology partner was Santosh's approach to the customer during the entire pre-sales process. He was able to understand our challenges and get his delivery team to respond quickly. He is great at forging lasting relationships with his customer contacts which would stand all his employers, current and future, in good stead."</div>
+        <div class="testi-person"><div class="testi-avatar">RS</div><div><div class="testi-name">Ranjit Satyanath</div><div class="testi-role">CIO, Shoppers Stop &middot; Now Taj Hotels</div></div></div>
+        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
+      </div>
+
+      <div class="testi-card fade-up">
+        <div class="testi-context">// August 2013 &middot; Client of Santosh</div>
+        <div class="testi-quote">"Santosh is detailed and result oriented, extremely intelligent, highly ethical, hard working, hands-on individual with excellent communication skills and the utmost integrity. He manages each project with an eye toward the big picture and watches the bottom line like a hawk without losing sight of the strategic objectives."</div>
+        <div class="testi-person"><div class="testi-avatar">AT</div><div><div class="testi-name">Ali Tabassi</div><div class="testi-role">CEO &amp; COO &middot; Strategic Growth</div></div></div>
+        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
+      </div>
+
+      <div class="testi-card fade-up">
+        <div class="testi-context">// March 2012 &middot; Client of Santosh</div>
+        <div class="testi-quote">"Santosh is very observant and passionate about what he does. A great sales leader with a keen business sense. From zero base, he took the relationship with Carrefour to a multi-million Rupee transaction."</div>
+        <div class="testi-person"><div class="testi-avatar">SB</div><div><div class="testi-name">Subhodip Bandyopadhyay</div><div class="testi-role">P&amp;L Owner &middot; CV &amp; AI Products</div></div></div>
+        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
+      </div>
+
+      <div class="testi-card fade-up">
+        <div class="testi-context">// July 2015 &middot; Worked under Santosh's leadership</div>
+        <div class="testi-quote">"His attention to details and professional approach to sales is what won many hearts and customers. Working with him was always a pleasure. He is the kind of leader who leads by example rather than giving instructions."</div>
+        <div class="testi-person"><div class="testi-avatar">AM</div><div><div class="testi-name">Asrar Makrani</div><div class="testi-role">Technology Leader</div></div></div>
+        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
+      </div>
+
+      <div class="testi-card fade-up">
+        <div class="testi-context">// April 2012 &middot; Client of Santosh</div>
+        <div class="testi-quote">"Santosh as a Relationship Manager brings high levels of stakeholder management at all levels in an organisation, integrity and energy in his dealings with his clients. His ability to understand client requirements and willingness to tailor appropriate service solutions contributed to successful outcomes during my interactions with him."</div>
+        <div class="testi-person"><div class="testi-avatar">AS</div><div><div class="testi-name">Ari Sanmuganathan</div><div class="testi-role">Co-Founder &amp; MD, Culmen Group</div></div></div>
+        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
+      </div>
+
     </div>
     <div class="testi-linkedin fade-up"><a href="https://www.linkedin.com/in/santosh-rajput" target="_blank" class="testi-li-link">View All On LinkedIn →</a></div>
   </div>
