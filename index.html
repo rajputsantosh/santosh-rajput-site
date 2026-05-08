@@ -728,6 +728,142 @@
     .btn-f1, .btn-cv, .nav-cta, .engage-cta, .role-cta, .pov-cta {
       cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='5' fill='none' stroke='%23e8002d' stroke-width='1.5'/><circle cx='12' cy='12' r='1.6' fill='%23e8002d'/></svg>") 12 12, pointer;
     }
+
+    /* Scroll progress bar — F1 telemetry line at top of viewport */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: linear-gradient(90deg, var(--red), var(--red2));
+      z-index: 9999;
+      pointer-events: none;
+      box-shadow: 0 0 8px rgba(232,0,45,0.5);
+      will-change: width;
+    }
+
+    /* Section header staggered reveals — eyebrow → title → subtitle */
+    .section-head.fade-up .section-label,
+    .section-head.fade-up .section-title,
+    .section-head.fade-up .section-sub {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .section-head.fade-up.vis .section-label { opacity: 1; transform: none; transition-delay: 0.1s; }
+    .section-head.fade-up.vis .section-title { opacity: 1; transform: none; transition-delay: 0.22s; }
+    .section-head.fade-up.vis .section-sub   { opacity: 1; transform: none; transition-delay: 0.34s; }
+
+    /* AI Stack — five-stage architecture flow with traveling pulses */
+    .arm-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+      gap: 0;
+      align-items: stretch;
+      margin-bottom: 36px;
+    }
+    .arm-flow-stage {
+      background: var(--bg);
+      border: 1px solid var(--line2);
+      padding: 18px 16px 18px 18px;
+      position: relative;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .arm-flow-stage::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--red);
+    }
+    .arm-flow-stage:hover { background: var(--bg3); border-color: var(--red); }
+    .arm-flow-num {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--red);
+      letter-spacing: 0.18em;
+      margin-bottom: 6px;
+    }
+    .arm-flow-name {
+      font-family: var(--cond);
+      font-weight: 800;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .arm-flow-items { display: flex; flex-direction: column; gap: 5px; }
+    .arm-flow-items span { font-size: 0.7rem; color: var(--ink2); line-height: 1.45; }
+    .arm-flow-arrow {
+      position: relative;
+      width: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .arm-flow-arrow::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      top: 50%;
+      height: 1px;
+      background: var(--line2);
+      transform: translateY(-50%);
+    }
+    .arm-flow-arrow::after {
+      content: '';
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-left: 5px solid var(--line2);
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      transform: translateY(-50%);
+    }
+    .arm-flow-pulse {
+      position: absolute;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      background: var(--red);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px rgba(232,0,45,0.8);
+      animation: arm-flow-travel 3.6s linear infinite;
+    }
+    .arm-flow-arrow:nth-of-type(2) .arm-flow-pulse { animation-delay: 0s; }
+    .arm-flow-arrow:nth-of-type(4) .arm-flow-pulse { animation-delay: 0.9s; }
+    .arm-flow-arrow:nth-of-type(6) .arm-flow-pulse { animation-delay: 1.8s; }
+    .arm-flow-arrow:nth-of-type(8) .arm-flow-pulse { animation-delay: 2.7s; }
+    @keyframes arm-flow-travel {
+      0%   { left: 0%;   opacity: 0; }
+      8%   { opacity: 1; }
+      92%  { opacity: 1; }
+      100% { left: 100%; opacity: 0; }
+    }
+    .arm-flow-foot {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--ink3);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-top: -22px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .arm-flow-foot span { color: var(--red); }
+    @media (max-width: 1024px) {
+      .arm-flow { grid-template-columns: 1fr; gap: 12px; }
+      .arm-flow-arrow { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -761,6 +897,8 @@
     </div>
   </div>
 </nav>
+
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
 <section id="hero">
   <div class="wm wm-steering" aria-hidden="true">
@@ -1454,6 +1592,59 @@
       <h3 class="arm-name">ARM <span>Agentic Revenue Machine</span></h3>
       <p class="arm-tag">Your autonomous revenue partner, backed by a specialist agent network. Consent-gated, confidence-thresholded, human-in-the-loop, with an immutable audit log on every write.</p>
 
+      <div class="arm-flow fade-up">
+        <div class="arm-flow-stage">
+          <div class="arm-flow-num">// 01</div>
+          <div class="arm-flow-name">Ingest</div>
+          <div class="arm-flow-items">
+            <span>Zoom &middot; Meet &middot; Gmail</span>
+            <span>Consent gate (hard)</span>
+            <span>Deepgram diarise</span>
+          </div>
+        </div>
+        <div class="arm-flow-arrow"><div class="arm-flow-pulse"></div></div>
+        <div class="arm-flow-stage">
+          <div class="arm-flow-num">// 02</div>
+          <div class="arm-flow-name">Agents</div>
+          <div class="arm-flow-items">
+            <span>8 specialists</span>
+            <span>Stateless &middot; versioned</span>
+            <span>75&ndash;90% confidence</span>
+          </div>
+        </div>
+        <div class="arm-flow-arrow"><div class="arm-flow-pulse"></div></div>
+        <div class="arm-flow-stage">
+          <div class="arm-flow-num">// 03</div>
+          <div class="arm-flow-name">Control</div>
+          <div class="arm-flow-items">
+            <span>Auto-write low-risk</span>
+            <span>HITL card &lt; 5 min</span>
+            <span>Evidence snippet</span>
+          </div>
+        </div>
+        <div class="arm-flow-arrow"><div class="arm-flow-pulse"></div></div>
+        <div class="arm-flow-stage">
+          <div class="arm-flow-num">// 04</div>
+          <div class="arm-flow-name">Surfaces</div>
+          <div class="arm-flow-items">
+            <span>Rep card &middot; Pipeline</span>
+            <span>CRO &middot; Forecast</span>
+            <span>Ask ARM (NL)</span>
+          </div>
+        </div>
+        <div class="arm-flow-arrow"><div class="arm-flow-pulse"></div></div>
+        <div class="arm-flow-stage">
+          <div class="arm-flow-num">// 05</div>
+          <div class="arm-flow-name">Audit</div>
+          <div class="arm-flow-items">
+            <span>Immutable log</span>
+            <span>Append-only</span>
+            <span>Every write traced</span>
+          </div>
+        </div>
+      </div>
+      <div class="arm-flow-foot fade-up">// DATA FLOW &middot; <span>EVIDENCE-GROUNDED</span> &middot; END-TO-END TRACEABLE</div>
+
       <div class="arm-product-grid">
 
         <div class="arm-col">
@@ -1807,7 +1998,7 @@ function countUpEl(el, dur) {
   }
   requestAnimationFrame(step);
 }
-const numSelectors = '.tr-val, .pit-meter-val, .cv-count-num, .testi-meta-num, .pcat-count strong, .ms-sum-num';
+const numSelectors = '.tr-val, .pit-meter-val, .cv-count-num, .testi-meta-num, .pcat-count strong, .ms-sum-num, .hl-num';
 document.querySelectorAll(numSelectors).forEach(el => {
   el.dataset.final = el.textContent.trim();
   el.classList.add('num');
@@ -2077,6 +2268,23 @@ if (impactSec) speedoObs.observe(impactSec);
       };
     })
     .catch(() => { container.innerHTML = '<div style="padding:40px;text-align:center;font-size:0.7rem;color:#6e6e7a;font-family:monospace;">Map data unavailable</div>'; });
+})();
+
+// Scroll progress bar — F1 telemetry line that fills as user scrolls
+(function() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  let ticking = false;
+  function update() {
+    const max = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    bar.style.width = pct + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
 })();
 </script>
 
