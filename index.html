@@ -743,58 +743,9 @@
     .race-item::before { transition: box-shadow 0.3s ease, background 0.2s; }
     .race-item:hover::before { background: var(--red2); box-shadow: 0 0 0 5px rgba(232,0,45,0.32), 0 0 14px rgba(232,0,45,0.7); }
 
-    /* Timeline marker pulse — subtle continuous heartbeat on the most recent role */
-    .race-item:first-child::before { animation: lap-pulse 2.4s ease-in-out infinite; }
-    @keyframes lap-pulse {
-      0%, 100% { box-shadow: 0 0 0 4px rgba(232,0,45,0.18), 0 0 0 0 rgba(232,0,45,0.6); }
-      50%       { box-shadow: 0 0 0 5px rgba(232,0,45,0.30), 0 0 18px 3px rgba(232,0,45,0); }
-    }
-
     /* Win-card hover lift */
     .win-card { transition: background 0.3s, transform 0.25s ease; }
     .win-card:hover { transform: translateY(-2px); }
-
-    /* Floating lap indicator — F1-style HUD that surfaces during Career Circuit */
-    .lap-indicator {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background: rgba(10,10,15,0.88);
-      border: 1px solid var(--red);
-      padding: 9px 14px;
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink2);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 150;
-      backdrop-filter: blur(8px);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      pointer-events: none;
-      max-width: 92vw;
-    }
-    .lap-indicator.active { opacity: 1; transform: none; }
-    .lap-indicator-tag { color: var(--ink3); }
-    .lap-indicator-num { color: var(--red); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; }
-    .lap-indicator-of { color: var(--ink3); }
-    .lap-indicator-name { color: var(--ink); font-family: var(--cond); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.04em; padding-left: 6px; border-left: 1px solid var(--line2); }
-    .lap-indicator-pulse {
-      display: inline-block;
-      width: 6px; height: 6px;
-      background: var(--red);
-      border-radius: 50%;
-      animation: tele-pulse 1.5s ease-in-out infinite;
-      margin-right: 2px;
-    }
-    @media (max-width: 720px) {
-      .lap-indicator { bottom: 14px; right: 14px; padding: 7px 10px; font-size: 0.52rem; }
-      .lap-indicator-name { display: none; }
-    }
 
     /* Scroll progress bar — F1 telemetry line at top of viewport */
     .scroll-progress {
@@ -966,13 +917,6 @@
 </nav>
 
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-<div class="lap-indicator" id="lap-indicator" aria-hidden="true">
-  <span class="lap-indicator-pulse"></span>
-  <span class="lap-indicator-tag">// LAP</span>
-  <span class="lap-indicator-num" id="lap-num">--</span>
-  <span class="lap-indicator-of" id="lap-of">/ 09</span>
-  <span class="lap-indicator-name" id="lap-name"></span>
-</div>
 
 <section id="hero">
   <div class="wm wm-steering" aria-hidden="true">
@@ -2367,60 +2311,6 @@ if (impactSec) speedoObs.observe(impactSec);
   update();
 })();
 
-// Lap indicator — F1 HUD that activates inside Career Circuit and tracks which race-item is in view
-(function() {
-  const indicator = document.getElementById('lap-indicator');
-  const lapNum = document.getElementById('lap-num');
-  const lapOf = document.getElementById('lap-of');
-  const lapName = document.getElementById('lap-name');
-  if (!indicator || !lapNum || !lapName) return;
-  const items = Array.from(document.querySelectorAll('#experience .race-item'));
-  if (!items.length) return;
-  if (lapOf) lapOf.textContent = '/ ' + String(items.length).padStart(2, '0');
-
-  // Track which race-item is most centered in viewport
-  function pickCurrent() {
-    const vh = window.innerHeight;
-    const center = window.scrollY + vh / 2;
-    let bestIdx = -1, bestDist = Infinity;
-    items.forEach((it, i) => {
-      const r = it.getBoundingClientRect();
-      const itemCenter = window.scrollY + r.top + r.height / 2;
-      const d = Math.abs(itemCenter - center);
-      if (d < bestDist) { bestDist = d; bestIdx = i; }
-    });
-    return bestIdx;
-  }
-  function updateLap() {
-    const idx = pickCurrent();
-    if (idx < 0) return;
-    const it = items[idx];
-    const co = it.querySelector('.race-co')?.textContent?.trim() || '';
-    lapNum.textContent = String(idx + 1).padStart(2, '0');
-    lapName.textContent = co;
-  }
-
-  // Show indicator only when Experience section is in viewport
-  const expSec = document.getElementById('experience');
-  if (expSec) {
-    const expObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { indicator.classList.add('active'); updateLap(); }
-        else indicator.classList.remove('active');
-      });
-    }, { threshold: 0, rootMargin: '-15% 0px -15% 0px' });
-    expObs.observe(expSec);
-  }
-
-  // Update on scroll while indicator is visible
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking && indicator.classList.contains('active')) {
-      requestAnimationFrame(() => { updateLap(); ticking = false; });
-      ticking = true;
-    }
-  }, { passive: true });
-})();
 </script>
 
 </body>
