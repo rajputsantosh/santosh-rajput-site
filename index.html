@@ -620,6 +620,10 @@
 
     /* ARM 3-column product grid */
     .arm-product-grid { display: grid; grid-template-columns: 1fr 1.45fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 24px; }
+    .arm-agents-block { margin-bottom: 24px; }
+    .arm-agents-wide { grid-template-columns: repeat(4, 1fr) !important; }
+    @media (max-width: 900px) { .arm-agents-wide { grid-template-columns: 1fr 1fr !important; } }
+    @media (max-width: 540px) { .arm-agents-wide { grid-template-columns: 1fr !important; } }
     .arm-col { background: var(--bg); padding: 22px 22px 24px; }
     .arm-col-eyebrow { font-family: var(--mono); font-size: 0.6rem; color: var(--red); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; }
     .arm-col-title { font-family: var(--cond); font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
@@ -1093,61 +1097,61 @@
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 10 · 2024–2025</div><div class="race-co">USEReady Inc.</div><div class="race-loc">New York, USA</div></div>
-        <div><div class="race-role">SVP, Head of BFSI &amp; Healthcare<span class="growth-stamp">2× QoQ</span></div><div class="race-pl">P&amp;L: $15M · 2× QoQ Growth<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Citibank pipeline</span><strong>$30M</strong></div><div class="race-pl-tip-line"><span>Modernization Factory</span><strong>$7.5M</strong></div><div class="race-pl-tip-line"><span>Regeneron new logo</span><strong>$0→$2.5M</strong></div><div class="race-pl-tip-line"><span>QoQ portfolio growth</span><strong>2×</strong></div></div></div><div class="race-desc">Drove 2× QoQ portfolio growth through product-led entry and BI services. Built $30M pipeline at Citibank; secured $7.5M Modernization Factory contract. Opened Regeneron ($0→$2.5M) and BlackRock as new accounts. Delivered Hadoop→Snowflake migration at BNY Mellon.</div></div>
+        <div><div class="race-role">SVP, Head of BFSI &amp; Healthcare<span class="growth-stamp">2× QoQ</span></div><div class="race-pl">P&amp;L: $15M · 2× QoQ Growth<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Citibank pipeline</span><strong>$30M</strong></div><div class="race-pl-tip-line"><span>Modernization Factory</span><strong>$7.5M</strong></div><div class="race-pl-tip-line"><span>Regeneron new logo</span><strong>$0→$2.5M</strong></div><div class="race-pl-tip-line"><span>QoQ portfolio growth</span><strong>2×</strong></div></div></div><div class="race-desc">$7.5M Citibank Modernization Factory + $30M pipeline. Opened Regeneron and BlackRock; delivered BNY Mellon Treasury Hadoop→Snowflake migration.</div></div>
         <div class="race-tags"><span class="etag">BFSI</span><span class="etag">BI</span><span class="etag">Snowflake</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 09 · 2023–2024</div><div class="race-co">ITC Infotech</div><div class="race-loc">New Jersey, USA</div></div>
-        <div><div class="race-role">Head of Banking &amp; Financial Services<span class="growth-stamp">+80% YoY</span></div><div class="race-pl">P&amp;L: $40M · ~80% Growth<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Annual P&amp;L</span><strong>$40M</strong></div><div class="race-pl-tip-line"><span>YoY growth</span><strong>~80%</strong></div><div class="race-pl-tip-line"><span>Engineering efficiencies</span><strong>~30%</strong></div><div class="race-pl-tip-line"><span>Key accounts</span><strong>BlackRock · GS · Santander</strong></div></div></div><div class="race-desc">~80% growth across BlackRock, Goldman Sachs, Santander, Castleton Commodities. Transformed engagement to Squad Model; implemented Co-Pilot + GitHub delivering ~30% engineering efficiencies. Recognized for BlackRock MPL product launch.</div></div>
+        <div><div class="race-role">Head of Banking &amp; Financial Services<span class="growth-stamp">+80% YoY</span></div><div class="race-pl">P&amp;L: $40M · ~80% Growth<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Annual P&amp;L</span><strong>$40M</strong></div><div class="race-pl-tip-line"><span>YoY growth</span><strong>~80%</strong></div><div class="race-pl-tip-line"><span>Engineering efficiencies</span><strong>~30%</strong></div><div class="race-pl-tip-line"><span>Key accounts</span><strong>BlackRock · GS · Santander</strong></div></div></div><div class="race-desc">~80% growth across BlackRock, Goldman, Santander, Castleton. Co-Pilot + GitHub rollout delivered 30% efficiency uplift; BlackRock MPL launch on time.</div></div>
         <div class="race-tags"><span class="etag">Goldman</span><span class="etag">BlackRock</span><span class="etag">AI</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 08 · 2021–2023</div><div class="race-co">Cygnet Infotech</div><div class="race-loc">New Jersey, USA</div></div>
-        <div><div class="race-role">President / Strategic Advisor<span class="growth-stamp">2× Portfolio</span></div><div class="race-pl">P&amp;L: $30M · 100% Growth<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Annual TCV</span><strong>$30M</strong></div><div class="race-pl-tip-line"><span>Portfolio growth</span><strong>100%</strong></div><div class="race-pl-tip-line"><span>Capital raised at</span><strong>~2× valuation</strong></div><div class="race-pl-tip-line"><span>M&amp;A</span><strong>OCR acquisition</strong></div></div></div><div class="race-desc">Won two large ODC deals doubling business to $30M TCV. 100% account portfolio growth. Raised capital at nearly double valuation in 9 months. Acquired OCR company; signed 360° ISV partnership.</div></div>
+        <div><div class="race-role">President / Strategic Advisor<span class="growth-stamp">2× Portfolio</span></div><div class="race-pl">P&amp;L: $30M · 100% Growth<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Annual TCV</span><strong>$30M</strong></div><div class="race-pl-tip-line"><span>Portfolio growth</span><strong>100%</strong></div><div class="race-pl-tip-line"><span>Capital raised at</span><strong>~2× valuation</strong></div><div class="race-pl-tip-line"><span>M&amp;A</span><strong>OCR acquisition</strong></div></div></div><div class="race-desc">Two large ODC deals doubled business to $30M TCV. Raised capital at ~2× valuation in 9 months; acquired OCR company.</div></div>
         <div class="race-tags"><span class="etag">P&amp;L</span><span class="etag">M&amp;A</span><span class="etag">Capital</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 07 · 2018–2021</div><div class="race-co">Marlabs Inc.</div><div class="race-loc">New Jersey, USA</div></div>
-        <div><div class="race-role">SVP — BFSI, Healthcare &amp; Hi-Tech<span class="growth-stamp">$0 → $40M</span></div><div class="race-pl">P&amp;L: $40M · $80M TCV<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Annual P&amp;L</span><strong>$40M</strong></div><div class="race-pl-tip-line"><span>Total contract value</span><strong>$80M</strong></div><div class="race-pl-tip-line"><span>AI supply chain savings</span><strong>$9M</strong></div><div class="race-pl-tip-line"><span>Pharma BOT savings</span><strong>$15M</strong></div></div></div><div class="race-desc">Built new Digital Services portfolio of $40M ($80M TCV). AI-driven supply chain generating $9M savings. 5-year Digital Roadmap for $10BN client. BOT model for Pharma giant saving $15M. Alliances with Salesforce, AWS, Google.</div></div>
+        <div><div class="race-role">SVP — BFSI, Healthcare &amp; Hi-Tech<span class="growth-stamp">$0 → $40M</span></div><div class="race-pl">P&amp;L: $40M · $80M TCV<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Annual P&amp;L</span><strong>$40M</strong></div><div class="race-pl-tip-line"><span>Total contract value</span><strong>$80M</strong></div><div class="race-pl-tip-line"><span>AI supply chain savings</span><strong>$9M</strong></div><div class="race-pl-tip-line"><span>Pharma BOT savings</span><strong>$15M</strong></div></div></div><div class="race-desc">Built $40M Digital Services portfolio ($80M TCV). $15M Pharma BOT savings; $9M AI supply chain savings; 5-year roadmap for $10BN client.</div></div>
         <div class="race-tags"><span class="etag">AI/ML</span><span class="etag">AWS</span><span class="etag">BOT</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 06 · 2017–2018</div><div class="race-co">Capgemini (Liquidhub)</div><div class="race-loc">New Jersey, USA</div></div>
-        <div><div class="race-role">Managing Director — Consulting<span class="growth-stamp">3× Exit Multiple</span></div><div class="race-pl">P&amp;L: $60M · ~3× Exit<div class="race-pl-tip"><div class="race-pl-tip-line"><span>CX/data portfolio</span><strong>$60M</strong></div><div class="race-pl-tip-line"><span>Liquidhub exit multiple</span><strong>~3× revenue</strong></div><div class="race-pl-tip-line"><span>Microsoft automation savings</span><strong>$30M</strong></div><div class="race-pl-tip-line"><span>Sogeti restructuring scope</span><strong>$1B</strong></div></div></div><div class="race-desc">Contributed to Liquidhub's sale to Capgemini at ~3× revenue. $30M automation savings for Microsoft. Led restructuring impacting $1B Sogeti business. Built CX and data intelligence portfolio of $60M.</div></div>
+        <div><div class="race-role">Managing Director — Consulting<span class="growth-stamp">3× Exit Multiple</span></div><div class="race-pl">P&amp;L: $60M · ~3× Exit<div class="race-pl-tip"><div class="race-pl-tip-line"><span>CX/data portfolio</span><strong>$60M</strong></div><div class="race-pl-tip-line"><span>Liquidhub exit multiple</span><strong>~3× revenue</strong></div><div class="race-pl-tip-line"><span>Microsoft automation savings</span><strong>$30M</strong></div><div class="race-pl-tip-line"><span>Sogeti restructuring scope</span><strong>$1B</strong></div></div></div><div class="race-desc">Contributed to ~3× revenue exit (Liquidhub → Capgemini). Built $60M CX/data portfolio; $30M Microsoft automation savings; led $1B Sogeti restructuring.</div></div>
         <div class="race-tags"><span class="etag">Microsoft</span><span class="etag">CX</span><span class="etag">Exit</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 05 · 2016–2017</div><div class="race-co">Tech Mahindra</div><div class="race-loc">New Jersey, USA</div></div>
-        <div><div class="race-role">VP — Hi-Tech &amp; Telco<span class="growth-stamp">$130M → $180M</span></div><div class="race-pl">P&amp;L: $180M · $130M→$180M<div class="race-pl-tip"><div class="race-pl-tip-line"><span>P&amp;L scaled to</span><strong>$180M</strong></div><div class="race-pl-tip-line"><span>Growth</span><strong>$130M → $180M</strong></div><div class="race-pl-tip-line"><span>EMC deal (3-year TCV)</span><strong>$120M</strong></div><div class="race-pl-tip-line"><span>Marquee accounts</span><strong>Verizon · Sony · Disney</strong></div></div></div><div class="race-desc">Grew business $130M→$180M through "Defend and Grow" strategy. Won EMC managed services deal ($120M, 3-year TCV). Portfolio: Sony, Walt Disney, Bloomberg, S&amp;P, Verizon.</div></div>
+        <div><div class="race-role">VP — Hi-Tech &amp; Telco<span class="growth-stamp">$130M → $180M</span></div><div class="race-pl">P&amp;L: $180M · $130M→$180M<div class="race-pl-tip"><div class="race-pl-tip-line"><span>P&amp;L scaled to</span><strong>$180M</strong></div><div class="race-pl-tip-line"><span>Growth</span><strong>$130M → $180M</strong></div><div class="race-pl-tip-line"><span>EMC deal (3-year TCV)</span><strong>$120M</strong></div><div class="race-pl-tip-line"><span>Marquee accounts</span><strong>Verizon · Sony · Disney</strong></div></div></div><div class="race-desc">Verizon $130M→$180M via 'Defend and Grow'. Won $120M / 3-yr EMC AMS deal. Portfolio: Sony, Walt Disney, Bloomberg, S&amp;P.</div></div>
         <div class="race-tags"><span class="etag">Verizon</span><span class="etag">$120M</span><span class="etag">Telco</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 04 · 2013–2016</div><div class="race-co">Ness Digital Engineering</div><div class="race-loc">Chicago / Toronto</div></div>
-        <div><div class="race-role">VP — Hi-Tech &amp; Retail<span class="growth-stamp">4× in 3 Yrs</span></div><div class="race-pl">P&amp;L: $70M · $17M→$70M (4×)<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Growth</span><strong>$17M → $70M (4×)</strong></div><div class="race-pl-tip-line"><span>Delivery delay reduction</span><strong>26%</strong></div><div class="race-pl-tip-line"><span>Client savings</span><strong>$39M</strong></div><div class="race-pl-tip-line"><span>EBITDA uplift</span><strong>+5%</strong></div></div></div><div class="race-desc">Digital Supply Chain for big-box retailer — 26% reduction in delivery delays, $39M savings, +5% EBITDA. 5-year digital transformation roadmap for Canada's leading retailer.</div></div>
+        <div><div class="race-role">VP — Hi-Tech &amp; Retail<span class="growth-stamp">4× in 3 Yrs</span></div><div class="race-pl">P&amp;L: $70M · $17M→$70M (4×)<div class="race-pl-tip"><div class="race-pl-tip-line"><span>Growth</span><strong>$17M → $70M (4×)</strong></div><div class="race-pl-tip-line"><span>Delivery delay reduction</span><strong>26%</strong></div><div class="race-pl-tip-line"><span>Client savings</span><strong>$39M</strong></div><div class="race-pl-tip-line"><span>EBITDA uplift</span><strong>+5%</strong></div></div></div><div class="race-desc">$39M client savings + 5% EBITDA + 26% delivery reduction (big-box retailer). 5-year digital roadmap for Canada's leading retailer.</div></div>
         <div class="race-tags"><span class="etag">Retail</span><span class="etag">Supply Chain</span><span class="etag">Cloud</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 03 · 2012–2013</div><div class="race-co">Xchanging</div><div class="race-loc">Kuala Lumpur, Malaysia</div></div>
-        <div><div class="race-role">Director — Sales &amp; Marketing (JV)</div><div class="race-pl">Xchanging-YTLC JV · SE Asia</div><div class="race-desc">Headed Sales and Marketing for Xchanging Malaysia — JV between YTLC and Xchanging — bringing cloud-based solutions across Malaysia using YTLC's 4G network.</div></div>
+        <div><div class="race-role">Director — Sales &amp; Marketing (JV)</div><div class="race-pl">Xchanging-YTLC JV · SE Asia</div><div class="race-desc">Headed Sales / Marketing for the YTLC-Xchanging JV. Brought cloud solutions to Malaysia on YTL's 4G network.</div></div>
         <div class="race-tags"><span class="etag">SaaS</span><span class="etag">APAC</span><span class="etag">JV</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 02 · 2005–2012</div><div class="race-co">UST Global</div><div class="race-loc">UK · India · Malaysia</div></div>
-        <div><div class="race-role">Director — BFSI &amp; Retail Portfolio<span class="growth-stamp">3-Continent Scale</span></div><div class="race-pl">$2→$40M (UK) · $0→$50M (IN) · $0→$20M (MY)<div class="race-pl-tip"><div class="race-pl-tip-line"><span>London — BU Head</span><strong>$2 → $40M</strong></div><div class="race-pl-tip-line"><span>Chennai — Director BD</span><strong>$0 → $50M</strong></div><div class="race-pl-tip-line"><span>Kuala Lumpur — BD</span><strong>$0 → $20M</strong></div><div class="race-pl-tip-line"><span>Trivandrum start</span><strong>2005</strong></div></div></div><div class="race-desc">7-year progression across Trivandrum, Kuala Lumpur, Chennai, and London. Built and scaled portfolios across three continents — UK from $2M to $40M, India from $0 to $50M, Malaysia from $0 to $20M.</div></div>
+        <div><div class="race-role">Director — BFSI &amp; Retail Portfolio<span class="growth-stamp">3-Continent Scale</span></div><div class="race-pl">$2→$40M (UK) · $0→$50M (IN) · $0→$20M (MY)<div class="race-pl-tip"><div class="race-pl-tip-line"><span>London — BU Head</span><strong>$2 → $40M</strong></div><div class="race-pl-tip-line"><span>Chennai — Director BD</span><strong>$0 → $50M</strong></div><div class="race-pl-tip-line"><span>Kuala Lumpur — BD</span><strong>$0 → $20M</strong></div><div class="race-pl-tip-line"><span>Trivandrum start</span><strong>2005</strong></div></div></div><div class="race-desc">7-year, 4-city progression. UK BU $2M→$40M (London); India BU $0→$50M (Chennai); Malaysia BU $0→$20M (KL).</div></div>
         <div class="race-tags"><span class="etag">UK</span><span class="etag">India</span><span class="etag">Malaysia</span></div>
       </div>
 
       <div class="race-item fade-up">
         <div><div class="race-num">// LAP 01 · 1998–2004</div><div class="race-co">SSI Technologies</div><div class="race-loc">Mumbai · Singapore · Chennai</div></div>
-        <div><div class="race-role">Sales Executive → Asst. BDM</div><div class="race-pl">Early Career · India &amp; SE Asia</div><div class="race-desc">Progressively grew from Sales &amp; Marketing Executive in Chennai (1998) to Assistant Business Development Manager in Singapore ($0→$20M) and Mumbai ($1→$3M). Laid the foundation of a multi-decade career in technology sales and consulting.</div></div>
+        <div><div class="race-role">Sales Executive → Asst. BDM</div><div class="race-pl">Early Career · India &amp; SE Asia</div><div class="race-desc">Sales Executive → Asst. BDM across Chennai, Singapore ($0→$20M), Mumbai ($1→$3M). Foundation of a multi-decade IT services career.</div></div>
         <div class="race-tags"><span class="etag">India</span><span class="etag">Singapore</span></div>
       </div>
 
@@ -1404,15 +1408,6 @@
       </div>
 
       <div class="win-card fade-up">
-        <div class="win-tag">// LOGISTICS · MODERNIZATION + ODC</div>
-        <div class="win-client">DHL</div>
-        <div class="win-era">UST Global · Malaysia + Chennai · 2007–09</div>
-        <p class="win-desc">AS/400 → .NET modernization of mission-critical billing platform, paired with the first dedicated DHL offshore delivery center in Chennai (inaugurated by NASSCOM president). Scalable long-term delivery model.</p>
-        <div class="win-pe"><span class="win-pe-tag">// PE LENS</span>Long-tenure ODC · capability anchor</div>
-        <div class="win-foot"><span class="win-type">Legacy Modernization</span><span class="win-scale">First ODC</span></div>
-      </div>
-
-      <div class="win-card fade-up">
         <div class="win-tag">// BFSI · MULTI-TOWER</div>
         <div class="win-client">Schroders</div>
         <div class="win-era">UST Global · UK + India · 2009–12</div>
@@ -1428,42 +1423,6 @@
         <p class="win-desc">Consolidated 18 applications into a single multi-tenant platform. 24×7 support optimization and offshore operations funded the new platform from existing run-estate savings — innovation paid for from the operations budget itself.</p>
         <div class="win-pe"><span class="win-pe-tag">// PE LENS</span>Self-funded transformation · margin reset</div>
         <div class="win-foot"><span class="win-type">Platform Consolidation</span><span class="win-scale">18 → 1 Apps</span></div>
-      </div>
-
-      <div class="win-card fade-up">
-        <div class="win-tag">// RETAIL + FINANCIAL · INSOURCING</div>
-        <div class="win-client">Canadian Tire / CTFS</div>
-        <div class="win-era">Ness · Toronto · 2013–15</div>
-        <p class="win-desc">Insourcing partnership — decomposed work from incumbent provider, improved SLAs, and built internal capability. Data warehouse, MDM, single source of truth, payment gateway, AML/NICE Actimize, and a Data Center of Excellence.</p>
-        <div class="win-pe"><span class="win-pe-tag">// PE LENS</span>Insourcing partnership · capability creation</div>
-        <div class="win-foot"><span class="win-type">Insourcing</span><span class="win-scale">Data CoE</span></div>
-      </div>
-
-      <div class="win-card fade-up">
-        <div class="win-tag">// BFSI · POST-MERGER INTEGRATION</div>
-        <div class="win-client">Bank of America — Countrywide</div>
-        <div class="win-era">UST Global · 2008–09</div>
-        <p class="win-desc">Post-acquisition technology integration following BoA's purchase of Countrywide — at the time one of the largest US mortgage origination and servicing platforms. Legacy integration, platform stabilization, and operating consolidation.</p>
-        <div class="win-pe"><span class="win-pe-tag">// PE LENS</span>Post-merger integration · platform stabilization</div>
-        <div class="win-foot"><span class="win-type">Post-Merger</span><span class="win-scale">Mortgage Platform</span></div>
-      </div>
-
-      <div class="win-card fade-up">
-        <div class="win-tag">// SEMICONDUCTOR · TESTING COE</div>
-        <div class="win-client">Intel</div>
-        <div class="win-era">UST Global · India · 2008–09</div>
-        <p class="win-desc">Largest UST deal at the time. Built a chip testing center of excellence with campus hiring, structured training, and distributed test centers across South India — seeded the firm's broader semiconductor testing business.</p>
-        <div class="win-pe"><span class="win-pe-tag">// PE LENS</span>Anchor account win · capability monetization seed</div>
-        <div class="win-foot"><span class="win-type">Testing CoE</span><span class="win-scale">Talent Factory</span></div>
-      </div>
-
-      <div class="win-card fade-up">
-        <div class="win-tag">// BFSI · REGIONAL MIGRATION</div>
-        <div class="win-client">SWIFT — South Asia Banks</div>
-        <div class="win-era">SSI · 2002–04</div>
-        <p class="win-desc">Regional managed migration of financial messaging from legacy X.25 to secure IP-based SWIFTNet. Bank-by-bank cutover planning, training, and post-migration stabilization across India, Sri Lanka, Bangladesh, Nepal, Bhutan and Maldives.</p>
-        <div class="win-pe"><span class="win-pe-tag">// PE LENS</span>Regional rollout · regulatory-grade execution</div>
-        <div class="win-foot"><span class="win-type">Regional Migration</span><span class="win-scale">Critical Payments</span></div>
       </div>
 
       <div class="win-card fade-up">
@@ -1708,49 +1667,18 @@
       </div>
       <div class="arm-flow-foot fade-up">// DATA FLOW &middot; <span>EVIDENCE-GROUNDED</span> &middot; END-TO-END TRACEABLE</div>
 
-      <div class="arm-product-grid">
-
-        <div class="arm-col">
-          <div class="arm-col-eyebrow">// ARM INTERFACE</div>
-          <div class="arm-col-title">One interface for the rep</div>
-          <ul class="arm-checks">
-            <li>Post-call summary cards</li>
-            <li>One-tap approve / edit / discard</li>
-            <li>Ask: &ldquo;What changed on Acme?&rdquo;</li>
-            <li>Live next steps &amp; follow-ups</li>
-            <li>Daily brief for rep and manager</li>
-          </ul>
+      <div class="arm-agents-block">
+        <div class="arm-col-eyebrow">// SPECIALIST AGENTS &middot; 8 IN THE NETWORK</div>
+        <div class="arm-agents-mini arm-agents-wide">
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">Capture</div><div class="arm-agent-mini-role">Transcribes calls, extracts signals</div></div>
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">Account</div><div class="arm-agent-mini-role">Creates &amp; deduplicates accounts</div></div>
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">Opportunity</div><div class="arm-agent-mini-role">Infers stage, amount, close date</div></div>
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">MDM</div><div class="arm-agent-mini-role">Entity resolution across aliases</div></div>
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">Health</div><div class="arm-agent-mini-role">Deal risk scoring &amp; stale flags</div></div>
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">Follow-Up</div><div class="arm-agent-mini-role">Drafts recaps &amp; next-step tasks</div></div>
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">Economics</div><div class="arm-agent-mini-role">Margin projection &amp; TCV model</div></div>
+          <div class="arm-agent-mini"><div class="arm-agent-mini-name">Reporting</div><div class="arm-agent-mini-role">Live pipeline &amp; forecast views</div></div>
         </div>
-
-        <div class="arm-col">
-          <div class="arm-col-eyebrow">// SPECIALIST AGENTS</div>
-          <div class="arm-col-title">Eight specialists, one network</div>
-          <div class="arm-agents-mini">
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">Capture</div><div class="arm-agent-mini-role">Transcribes calls, extracts signals</div></div>
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">Account</div><div class="arm-agent-mini-role">Creates &amp; deduplicates accounts</div></div>
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">Opportunity</div><div class="arm-agent-mini-role">Infers stage, amount, close date</div></div>
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">MDM</div><div class="arm-agent-mini-role">Entity resolution across aliases</div></div>
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">Health</div><div class="arm-agent-mini-role">Deal risk scoring &amp; stale flags</div></div>
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">Follow-Up</div><div class="arm-agent-mini-role">Drafts recaps &amp; next-step tasks</div></div>
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">Economics</div><div class="arm-agent-mini-role">Margin projection &amp; TCV model</div></div>
-            <div class="arm-agent-mini"><div class="arm-agent-mini-name">Reporting</div><div class="arm-agent-mini-role">Live pipeline &amp; forecast views</div></div>
-          </div>
-        </div>
-
-        <div class="arm-col">
-          <div class="arm-col-eyebrow">// WHAT STAYS LIVE</div>
-          <div class="arm-col-title">Always-on outputs</div>
-          <ul class="arm-checks">
-            <li>Accounts &amp; contacts</li>
-            <li>Opportunities &amp; stages</li>
-            <li>Next steps &amp; follow-ups</li>
-            <li>Deal health &amp; slippage</li>
-            <li>Weighted pipeline</li>
-            <li>Confidence-adjusted forecast</li>
-            <li>Leadership briefings</li>
-          </ul>
-        </div>
-
       </div>
 
       <div class="arm-bottom-line"><strong>The human makes decisions.</strong> The agent network handles all the operating work.</div>
@@ -1773,21 +1701,6 @@
         <div class="agent-side-tag">POST-CALL &middot; DRAFT-ONLY</div>
         <div class="agent-side-name">Customer Follow-Up Agent</div>
         <div class="agent-side-body">Drafts the follow-up note from the transcript and stated commits. Always draft only &mdash; I review and send.</div>
-      </div>
-      <div class="agent-side-card fade-up">
-        <div class="agent-side-tag">VISUALISATION &middot; ON ARM</div>
-        <div class="agent-side-name">ARM Dashboard Agent</div>
-        <div class="agent-side-body">Live pipeline, risk and forecast views on top of ARM data &mdash; bound to the same evidence log so every metric traces back to a call.</div>
-      </div>
-      <div class="agent-side-card fade-up">
-        <div class="agent-side-tag">DAILY &middot; COMMAND SURFACE</div>
-        <div class="agent-side-name">Sales Dashboard</div>
-        <div class="agent-side-body">Personal command surface across the firms I represent &mdash; pursuits, stages, last-touch, next action. The view I open first.</div>
-      </div>
-      <div class="agent-side-card fade-up">
-        <div class="agent-side-tag">OPS &middot; INTERNAL</div>
-        <div class="agent-side-name">Reimbursement Agent</div>
-        <div class="agent-side-body">Receipts in, structured expense report out. Build, not buy &mdash; applied to the unglamorous workflows too.</div>
       </div>
     </div>
 
@@ -1949,10 +1862,8 @@
   <div class="section-inner">
     <div class="section-head fade-up"><div class="section-label">// PADDOCK VOICES</div><h2 class="section-title">What Leaders <em>Have Said</em></h2></div>
     <div class="testi-meta fade-up">
-      <div class="testi-meta-cell"><div class="testi-meta-num">7</div><div class="testi-meta-label">// Voices &middot; CXOs &amp; Leaders</div></div>
-      <div class="testi-meta-cell"><div class="testi-meta-num">5</div><div class="testi-meta-label">// C-Suite Endorsements</div></div>
-      <div class="testi-meta-cell"><div class="testi-meta-num">4</div><div class="testi-meta-label">// Continents Represented</div></div>
-      <div class="testi-meta-cell"><div class="testi-meta-num">15+</div><div class="testi-meta-label">// LinkedIn Recommendations</div></div>
+      <div class="testi-meta-cell"><div class="testi-meta-num">3</div><div class="testi-meta-label">// Featured Recommendations</div></div>
+      <div class="testi-meta-cell"><div class="testi-meta-num">15+</div><div class="testi-meta-label">// More on LinkedIn</div></div>
     </div>
     <div class="testi-grid">
 
@@ -1974,34 +1885,6 @@
         <div class="testi-context">// March 2012 &middot; Client at Shoppers Stop</div>
         <div class="testi-quote">"One of the reasons I chose UST Global to partner Shoppers Stop as an important Technology partner was Santosh's approach to the customer during the entire pre-sales process. He was able to understand our challenges and get his delivery team to respond quickly. He is great at forging lasting relationships with his customer contacts which would stand all his employers, current and future, in good stead."</div>
         <div class="testi-person"><div class="testi-avatar">RS</div><div><div class="testi-name"><a href="https://www.linkedin.com/in/ranjits" target="_blank" rel="noopener">Ranjit Satyanath</a></div><div class="testi-role">CIO, Shoppers Stop &middot; Now Taj Hotels</div></div></div>
-        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
-      </div>
-
-      <div class="testi-card fade-up">
-        <div class="testi-context">// August 2013 &middot; Client of Santosh</div>
-        <div class="testi-quote">"Santosh is detailed and result oriented, extremely intelligent, highly ethical, hard working, hands-on individual with excellent communication skills and the utmost integrity. He manages each project with an eye toward the big picture and watches the bottom line like a hawk without losing sight of the strategic objectives."</div>
-        <div class="testi-person"><div class="testi-avatar">AT</div><div><div class="testi-name"><a href="https://www.linkedin.com/in/ali-tabassi" target="_blank" rel="noopener">Ali Tabassi</a></div><div class="testi-role">CEO &amp; COO &middot; Strategic Growth</div></div></div>
-        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
-      </div>
-
-      <div class="testi-card fade-up">
-        <div class="testi-context">// March 2012 &middot; Client of Santosh</div>
-        <div class="testi-quote">"Santosh is very observant and passionate about what he does. A great sales leader with a keen business sense. From zero base, he took the relationship with Carrefour to a multi-million Rupee transaction."</div>
-        <div class="testi-person"><div class="testi-avatar">SB</div><div><div class="testi-name"><a href="https://www.linkedin.com/in/subhodip-bandyopadhyay" target="_blank" rel="noopener">Subhodip Bandyopadhyay</a></div><div class="testi-role">P&amp;L Owner &middot; CV &amp; AI Products</div></div></div>
-        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
-      </div>
-
-      <div class="testi-card fade-up">
-        <div class="testi-context">// July 2015 &middot; Worked under Santosh's leadership</div>
-        <div class="testi-quote">"His attention to details and professional approach to sales is what won many hearts and customers. Working with him was always a pleasure. He is the kind of leader who leads by example rather than giving instructions."</div>
-        <div class="testi-person"><div class="testi-avatar">AM</div><div><div class="testi-name"><a href="https://www.linkedin.com/in/asrarmakrani" target="_blank" rel="noopener">Asrar Makrani</a></div><div class="testi-role">Technology Leader</div></div></div>
-        <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
-      </div>
-
-      <div class="testi-card fade-up">
-        <div class="testi-context">// April 2012 &middot; Client of Santosh</div>
-        <div class="testi-quote">"Santosh as a Relationship Manager brings high levels of stakeholder management at all levels in an organisation, integrity and energy in his dealings with his clients. His ability to understand client requirements and willingness to tailor appropriate service solutions contributed to successful outcomes during my interactions with him."</div>
-        <div class="testi-person"><div class="testi-avatar">AS</div><div><div class="testi-name"><a href="https://www.linkedin.com/in/arisanmuganathan" target="_blank" rel="noopener">Ari Sanmuganathan</a></div><div class="testi-role">Co-Founder &amp; MD, Culmen Group</div></div></div>
         <a href="https://www.linkedin.com/in/santosh-rajput/details/recommendations/" target="_blank" rel="noopener" class="testi-verify">Verify on LinkedIn</a>
       </div>
 
