@@ -67,7 +67,7 @@
       --line2: rgba(255,255,255,0.14);
       --ink: #e6e8ea;
       --ink2: #a8aab0;
-      --ink3: #7a7c84;
+      --ink3: #8c8e95;
       --red: #5fb3a3;
       --red2: #7cc7b8;
       --cond: 'Barlow Condensed', sans-serif;
@@ -917,6 +917,24 @@
     @media (max-width: 1024px) {
       .arm-flow { grid-template-columns: 1fr; gap: 12px; }
       .arm-flow-arrow { display: none; }
+    }
+
+    /* === ACCESSIBILITY === */
+    /* Respect user motion preferences (vestibular / cognitive disability friendly) */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    /* Explicit keyboard focus rings — replaces inconsistent browser defaults */
+    a:focus-visible, button:focus-visible, .role-card:focus-visible, .why-card:focus-visible,
+    .engage-card:focus-visible, .testi-card:focus-visible, .win-card:focus-visible,
+    .ins-card:focus-visible, .pov-card:focus-visible, .agent-side-card:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
     }
   </style>
 </head>
@@ -2290,7 +2308,7 @@ if (impactSec) speedoObs.observe(impactSec);
         revealObs.observe(mapWrap);
       };
     })
-    .catch(() => { container.innerHTML = '<div style="padding:40px;text-align:center;font-size:0.7rem;color:#7a7c84;font-family:monospace;">Map data unavailable</div>'; });
+    .catch(() => { container.innerHTML = '<div style="padding:40px;text-align:center;font-size:0.7rem;color:#8c8e95;font-family:monospace;">Map data unavailable</div>'; });
 })();
 
 // Scroll progress bar — F1 telemetry line that fills as user scrolls

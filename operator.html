@@ -29,7 +29,7 @@
 
   <style>
     *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-    :root { --bg:#1a1d23; --bg2:#252830; --bg3:#2d3038; --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.14); --ink:#e6e8ea; --ink2:#a8aab0; --ink3:#7a7c84; --red:#5fb3a3; --red2:#7cc7b8; --cond:'Barlow Condensed',sans-serif; --sans:'Inter',system-ui,sans-serif; --mono:'Share Tech Mono',monospace; --max:1200px; }
+    :root { --bg:#1a1d23; --bg2:#252830; --bg3:#2d3038; --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.14); --ink:#e6e8ea; --ink2:#a8aab0; --ink3:#8c8e95; --red:#5fb3a3; --red2:#7cc7b8; --cond:'Barlow Condensed',sans-serif; --sans:'Inter',system-ui,sans-serif; --mono:'Share Tech Mono',monospace; --max:1200px; }
     html { scroll-behavior:smooth; }
     body { background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
       background-image:repeating-linear-gradient(0deg,rgba(255,255,255,0.012) 0 1px,transparent 1px 60px),repeating-linear-gradient(90deg,rgba(255,255,255,0.012) 0 1px,transparent 1px 60px); }
@@ -114,6 +114,24 @@
     .footer-links a { font-family:var(--mono); font-size:0.6rem; color:var(--ink3); text-decoration:none; letter-spacing:0.12em; text-transform:uppercase; }
     .footer-links a:hover { color:var(--red); }
     @media (max-width:1024px) { section { padding:64px 32px; } .hero { padding:80px 32px; } nav { padding:0 24px; } footer { padding:20px 32px; } }
+
+    /* === ACCESSIBILITY === */
+    /* Respect user motion preferences (vestibular / cognitive disability friendly) */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    /* Explicit keyboard focus rings — replaces inconsistent browser defaults */
+    a:focus-visible, button:focus-visible, .role-card:focus-visible, .why-card:focus-visible,
+    .engage-card:focus-visible, .testi-card:focus-visible, .win-card:focus-visible,
+    .ins-card:focus-visible, .pov-card:focus-visible, .agent-side-card:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
   </style>
 </head>
 <body>
